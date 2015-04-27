@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/command
+END
+CommandFactoryTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/command/CommandFactoryTest.cfc
+END
+CommandContextTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/command/CommandContextTest.cfc
+END
+CommandTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/command/CommandTest.cfc
+END

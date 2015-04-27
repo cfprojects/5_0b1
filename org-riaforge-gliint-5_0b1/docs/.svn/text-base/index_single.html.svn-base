@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Gliint Reference Guide</title>
+	<link rel="stylesheet" href="css/referenceguide.css" type="text/css" />
+</head>
+<body>
+<div class="book" lang="en">
+<div class="titlepage">
+<div>
+<p id="title">
+	<!-- a href="http://www.gliint.org/" class="site_href"><strong>gliint.org</strong></a-->
+	<!-- a href="http://www.gliint.org/" class="doc_href"><strong>Community Documentation</strong></a -->
+</p>
+<div>
+<h1 class="title"><a id="d0e1" />Gliint Reference Guide</h1>
+</div>
+</div>
+<hr />
+</div>
+<div class="toc">
+<dl>
+	<dt><span class="chapter"><a href="#introduction">1. Introduction</a></span></dt>
+	<dd>
+	<dl>
+		<dt><span class="section"><a href="#license">1.1. License </a></span></dt>
+		<dt><span class="section"><a href="#downloads">1.2. Downloads</a></span></dt>
+		<dt><span class="section"><a href="#sources">1.3. Sources</a></span></dt>
+		<dt><span class="section"><a href="#supportedsystems">1.4. Supported Systems</a></span></dt>
+		<dt><span class="section"><a href="#whatitis">1.5. What it is</a></span></dt>
+		<dt><span class="section"><a href="#contentsofthisguide">1.6. Contents of this guide</a></span></dt>
+	</dl>
+	</dd>
+
+	<dt><span class="chapter"><a href="#installation">2. Installation</a></span></dt>
+	<dd>
+	<dl>
+		<dt><span class="section"><a href="#thedistribution">2.1. The Distribution</a></span></dt>
+		<dt><span class="section"><a href="#quickstartguide">2.2. Quickstart Guide</a></span></dt>
+		<dt><span class="section"><a href="#configurationfiles">2.3. Configuration files</a></span></dt>
+	</dl>
+	</dd>
+
+	<dt><span class="chapter"><a href="#gettingstarted">3. Getting Started</a></span></dt>
+	<dd>
+		<dl>
+			<dt><span class="section"><a href="#theframework">3.1. The framework</a></span></dt>
+			<dt><span class="section"><a href="#configurationguide">3.2. Configuration guide</a></span></dt>
+			<dd>
+			<dl>
+				<dt><span class="section"><a href="#dispatcher">3.2.1. Dispatcher</a></span></dt>
+				<dt><span class="section"><a href="#handlermappings">3.2.2. HandlerMappings</a></span></dt>
+					<dd>
+					<dl>
+						<dt><span class="section"><a href="#handlerexecutionchains">3.2.2.1 HandlerExecutionChains</a></span></dt>
+					</dl>
+					</dd>
+				<dt><span class="section"><a href="#handlerinterceptors">3.2.3. HandlerInterceptors</a></span></dt>
+					<dd>
+					<dl>
+						<dt><span class="section"><a href="#connectors">3.2.3.1. Connectors</a></span></dt>
+						<dt><span class="section"><a href="#httpconnector">3.2.3.2. HTTPConnector</a></span></dt>
+					</dl>
+					</dd>
+				<dt><span class="section"><a href="#gliintcontroller">3.2.4. Gliint Controller</a></span></dt>
+				<dt><span class="section"><a href="#commanddispatcher">3.2.4.1. Command Dispatcher</a></span></dt>
+				<dt><span class="section"><a href="#commandhandlermappings">3.2.4.2 CommandHandler mappings</a></span></dt>
+				<dt><span class="section"><a href="#commandfactory">3.2.4.3. CommandFactory</a></span></dt>
+				<dt><span class="section"><a href="#commands">3.2.5. Commands</a></span></dt>
+				<dt><span class="section"><a href="#commandhandlers">3.2.6. CommandHandlers</a></span></dt>
+				<dt><span class="section"><a href="#responseinterceptors">3.2.7. ResponseInterceptors</a></span></dt>
+				<dt><span class="section"><a href="#ruleinterceptors">3.2.8. RuleInterceptors</a></span></dt>
+			</dl>
+			</dd>
+		</dl>
+	</dd>
+
+	<dt><span class="chapter"><a href="#tutorials">4. Tutorials</a></span></dt>
+	<dd>
+	<dl>
+		<dt><span class="section"><a href="#usingthecommandcontext">4.1. Using the Command Context</a></span></dt>
+	<dt><span class="section"><a href="#usingthecommandcontext">4.2. Using the Command Context</a></span></dt>
+		<dd>
+			<dl>
+			<dt><span class="section"><a href="#responses">4.2.1. Responses</a></span></dt>
+			<dt><span class="section"><a href="#commandbubbling">4.2.2. Command Bubbling</a></span></dt>
+			<dt><span class="section"><a href="#hierarchicalcommandcontexts">4.2.3. Hierarchical CommandContexts</a></span></dt>
+			</dl>
+		</dd>
+	</dl>
+	</dd>
+
+</dl>
+</div>
+
+<div class="chapter" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="introduction" />Chapter 1. Introduction</h2>
+</div>
+</div>
+</div>
+<div class="toc">
+<dl>
+	<dt><span class="section"><a href="#license">1.1. License</a></span></dt>
+	<dt><span class="section"><a href="#downloads">1.2. Downloads</a></span></dt>
+	<dt><span class="section"><a href="#sources">1.3. Sources</a></span></dt>
+	<dt><span class="section"><a href="#supportedsystems">1.4. Supported Systems</a></span></dt>
+	<dt><span class="section"><a href="#whatitis">1.5. What it is</a></span></dt>
+	<dt><span class="section"><a href="#contentsofthisguide">1.6. Contents of this guide</a></span></dt>
+</dl>
+</div>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="license" />1.1. License</h2>
+</div>
+</div>
+</div>
+<p>
+Gliint is licensed under the Apache License, Version 2.0, which can be found here:
+<a href="http://www.apache.org/licenses/LICENSE-2.0" >http://www.apache.org/licenses/LICENSE-2.0</a>
+</p>
+<p>
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</p>
+<p>Gliint is Copyright (c) 2005-2009 Mitchell M. Rose &nbsp; All rights reserved.	</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="downloads" />1.2. Downloads</h2>
+</div>
+</div>
+</div>
+<p>Distribution packages can be downloaded from riaforge or the Gliint website</p>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://Gliint.riaforge.org/">http://Gliint.riaforge.org</a>
+<br/><a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.gliint.org/">http://www.gliint.org/download.html</a>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="sources" />1.3. Sources</h2>
+</div>
+</div>
+</div>
+<p>The source code for this component can be found in the riaforge SVN repository:</p>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://svn.riaforge.org/Gliint/framework/">http://svn.riaforge.org/Gliint/framework/</a></div>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="supportedsystems" />1.4. Supported Systems</h2>
+</div>
+</div>
+</div>
+<p>
+Gliint requires the ColdSpring Framework 1.2, which runs on ColdFusion 7.0 and higher. 
+Coldfusion 7, 8, and 9 run on several operating systems: Windows, Mac OS X, Unix/Linux.
+</p>
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.adobe.com/products/coldfusion/" rel="nofollow" title="http://www.adobe.com/products/coldfusion/">Adobe Coldfusion</a>
+<br/><a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://www.coldspringframework.org/" rel="nofollow" title="http://www.coldspringframework.org/">ColdSpring Framework</a>
+<p>
+While Gliint is expected to perform on other CF engines like Railo and openBlueDragon it has NOT yet been tested against them.
+</p>
+<p>Caution: Gliint uses the CreateObject() function; your enviroment must support its usage.</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="whatitis" />1.5. What it is</h2>
+</div>
+</div>
+</div>
+<p>
+Gliint is a lightweight, flexible Implicit Invocation application framework for ColdFusion, designed as components which can be &quot;wired together&quot; with ColdSpring so developers can easily extend or modify it for their needs.
+It is not a general purpose MVC/HTML framework like Fusebox, Mach-II or Model-Glue and is not recommended for situations where those frameworks are well suited.
+Gliint's focus is on supporting component reuse (using the Command design pattern) and on supporting both synchronous and asynchronous requests and responses (using the Interceptor design pattern).
+Using interceptors called Connectors, Gliint can process requests from anywhere and send responses to anywhere, for example, from an HTML page to multiple Flash, Flex, Ajax, or Twitter clients (or vice versa); the Connectors generate client specific views.
+</p>
+</div>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="contentsofthisguide" />1.6. Contents of this guide</h2>
+</div>
+</div>
+</div>
+<p>This guide explains the standard ways and typical use cases for using Gliint.
+The (eventual) developers guide explains more advanced customization options.</p>
+</div>
+</div>
+
+<div class="chapter" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="installation" />Chapter 2. Installation</h2>
+</div>
+</div>
+</div>
+<div class="toc">
+<dl>
+	<dt><span class="section"><a href="#thedistribution">2.1. The Distribution</a></span></dt>
+	<dt><span class="section"><a href="#quickstartguide">2.2. Quickstart guide</a></span></dt>
+	<dt><span class="section"><a href="#configurationfiles">2.3. Configuration files</a></span></dt>
+</dl>
+</div>
+<p>This chapter describes how to install Gliint.</p>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="thedistribution" />2.1. The Distribution</h2>
+</div>
+</div>
+</div>
+<p>
+Either unzip the Gliint download or pull from the subversion repository to some location on your hard drive.
+You will see the following subdirectories:
+</p>
+<div class="itemizedlist">
+<dl>
+	<dt>config</dt><dd>A directory for configuration files</dd>
+	<dt>controller</dt><dd>A directory for controller related components</dd>
+	<dt>docs</dt><dd>Documentation</dd>
+	<dt>model</dt><dd>A directory for model components</dd>
+	<dt>org/gliint/framework</dt><dd>Framework components</dd>
+	<dt>org/gliint/resources</dt><dd>Other helpful resources</dd>
+	<dt>org/gliint/tests</dt><dd>Unit and integration tests</dd>
+	<dt>samples</dt><dd>Example applications, some may be used in the reference guide</dd>
+	<dt>view</dt><dd>A directory for view components</dd>
+</dl>
+</div>
+<p>
+You will also see the following files in the root folder:</p>
+<div class="itemizedlist">
+<dl>
+	<dt>Application.cfc</dt><dd>A ColdFusion application component</dd>
+	<dt>index.cfm</dt><dd>A default page for web server integration</dd>
+	<dt>readme.txt</dt><dd>A text file with quickstart directions</dd>
+</dl>
+</div>
+<p>
+On production systems, for security reasons it is highly recommended that you do NOT install the docs, samples, or org/gliint/tests directories.
+</p>
+
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="quickstartguide" />2.2. Quickstart Guide</h2>
+</div>
+</div>
+</div>
+<p>
+The <span class="bold"><strong>quickstart setup</strong></span> is the simplest way to get started. To complete it, follow these steps.
+</p>
+<div class="itemizedlist">
+<ol>
+
+<li>
+Place the distribution directories and files in your web root.
+You can also place the org/gliint/framework directory elsewhere if you can create a Coldfusion mapping.
+Do NOT use application.cfc mappings.
+It is okay to delete the readme.txt file from the web root.
+</li>
+<li>
+If you are interested in viewing the trace listing generated by Gliint, open a browser and browse to the URL for the ColdFusion Administrator application for the site.
+Log in to the application and, under Debugging and Logging &gt; Debug Output Settings, check Enable Request Debugging Output and Tracing Information.
+</li>
+<li>
+Open a browser and browse to the URL of the web root. If all has gone well, you should see the Hello! page.
+</li>
+</ol>
+</div>
+<p>
+That's it! Now you can continue to review the documentation, look at the API, or review the configuration files.
+</p>
+<br class="table-break" />
+</div>
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="configurationfiles" />2.3. Configuration files</h2>
+</div>
+</div>
+</div>
+<p>
+The example configuration files in the <code class="literal">config</code> directory are the best starting point.
+The <code class="literal">coldspring.xml</code> file is used to configure ColdSpring for the application.
+The <code class="literal">Application.cfc</code> file refers to it as <code class="literal">this['contextConfigLocation']</code>.
+</p>
+<p>
+If you open the <code class="literal">coldspring.xml</code> file in any text editor, you'll see that it &quot;imports&quot; other file(s) in the same directory.
+The <code class="literal">coldspring.gliint.cfg.xml</code> file is used to configure Gliint for the application. It contains the full range of configuration options.
+Also provided is the <code class="literal">gliint.minimal.cfg.xml</code> file, the minimal configuration file for Gliint, which you can substitute for &quot;brevity&quot;.
+More about the syntax of these files can be found on the ColdSpring Framework website.
+</p>
+</div>
+</div>
+<div class="chapter" lang="en">
+<div class="titlepage">
+<div>
+<div>
+
+
+<h2 class="title"><a id="gettingstarted" />Chapter 3. Getting Started</h2>
+</div>
+</div>
+</div>
+<div class="toc">
+<dl>
+	<dt><span class="section"><a href="#theframework">3.1. The framework</a></span></dt>
+	<dt><span class="section"><a href="#configurationguide">3.2. Configuration guide</a></span></dt>
+	<dd>
+	<dl>
+		<dt><span class="section"><a href="#dispatcher">3.2.1. Dispatcher</a></span></dt>
+		<dt><span class="section"><a href="#handlermappings">3.2.2. HandlerMappings</a></span></dt>
+			<dd>
+			<dl>
+				<dt><span class="section"><a href="#handlerexecutionchains">3.2.2.1 HandlerExecutionChains</a></span></dt>
+			</dl>
+			</dd>
+		<dt><span class="section"><a href="#handlerinterceptors">3.2.3. HandlerInterceptors</a></span></dt>
+			<dd>
+			<dl>
+				<dt><span class="section"><a href="#connectors">3.2.3.1. Connectors</a></span></dt>
+				<dt><span class="section"><a href="#httpconnector">3.2.3.2. HTTPConnector</a></span></dt>
+			</dl>
+			</dd>
+		<dt><span class="section"><a href="#gliintcontroller">3.2.4. Gliint Controller</a></span></dt>
+		<dt><span class="section"><a href="#commanddispatcher">3.2.4.1. Command Dispatcher</a></span></dt>
+		<dt><span class="section"><a href="#commandhandlermappings">3.2.4.2 CommandHandler mappings</a></span></dt>
+		<dt><span class="section"><a href="#commandfactory">3.2.4.3. CommandFactory</a></span></dt>
+		<dt><span class="section"><a href="#commands">3.2.5. Commands</a></span></dt>
+		<dt><span class="section"><a href="#commandhandlers">3.2.6. CommandHandlers</a></span></dt>
+		<dt><span class="section"><a href="#responseinterceptors">3.2.7. ResponseInterceptors</a></span></dt>
+		<dt><span class="section"><a href="#ruleinterceptors">3.2.8. RuleInterceptors</a></span></dt>
+	</dl>
+	</dd>
+</dl>
+</div>
+<p>
+This chapter will explain how to configure Gliint to dispatch requests using the typical installation.
+After installing the quickstart site, you will review the configuration files
+</p>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="theframework" />3.1. The framework</h2>
+</div>
+</div>
+</div>
+<p>
+The Gliint framework is designed around a central dispatcher component, extended by <code class="literal">Application.cfc</code>, that dispatches requests to the Gliint controller, and optionally to other controllers.
+It is completely integrated with the ColdSpring IoC application context so you can use all ColdSpring features.
+</p>
+<p>
+The request processing workflow of the <code class="literal">Dispatcher</code> is illustrated in the following diagram.
+The pattern-savvy reader will recognize that the Dispatcher is an expression of the &quot;Front Controller&quot; design pattern
+(a pattern Gliint shares with many other leading web frameworks).
+</p>
+	<div class="figure"><a id="framework.workflow.process.definition.example" />
+	<div class="figure-contents">
+	<div class="mediaobject" align="center"><img src="images/framework.workflow.process.definition.png" align="middle" alt="The framework workflow process definition example" /></div>
+	</div>
+	<br class="figure-break" />
+<p>
+Each <code class="literal">Dispatcher</code> has it's own WebApplicationContext, and WebApplicationContexts may be placed in a hierarchy so that children can find shared beans in the parent,
+and also override parent definitions for beans with the same id. Gliint's <code class="literal">DefaultWebApplicationContext</code> component is an extension of ColdSpring's DefaultApplicationContext.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="configurationguide" />3.2. Configuration guide</h2>
+</div>
+</div>
+</div>
+<p>
+Most components are provided sensible defaults which can be configured when necessary. To use Gliint, your <code class="literal">Application.cfc</code> file extends the framework's <code class="literal">Dispatcher</code> component.
+Several beans are required and must be included in the WebApplicationContext for Gliint to process properly. These include <code class="literal">HandlerMappings</code>, <code class="literal">Connectors</code>, the <code class="literal">GliintController</code>, and the Gliint <code class="literal">CommandFactory</code>.
+<code class="literal">HandlerMappings</code> handle the execution of a list of pre- and post-processors (Interceptors and Connectors) and Controllers that will be executed if they match certain criteria.
+<code class="literal">Connectors</code> receive requests and return responses, while Controllers (principally the <code class="literal">GliintController</code>) handle requests; the <code class="literal">GliintController</code> utilizes the <code class="literal">CommandFactory</code> to generate <code class="literal">Commands</code> and process them.
+</p>
+<p>
+The Gliint <code class="literal">Dispatcher</code> component is modeled after the Spring Dispatcher Servlet.
+The <code class="literal">HandlerAdapter</code> and <code class="literal">HandlerExecutionChain</code> components, as well as the <code class="literal">org.gliint.framework.context</code> package, and several components of the <code class="literal">org.gliint.framework.handler</code> package
+are also modeled after Spring classes and packages with similar names. Curious or inspired readers are encouraged to review the Spring documentation at
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/ch16.html" rel="nofollow" title="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/ch16.html">http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/ch16.html</a>
+</p>
+<p>
+The guide below is designed to introduce you to the main components.
+Almost all of them have a <code class="literal">shouldTrace</code> property that determines if traces should be written to the Trace log when ColdFusion debugging and tracing are turned on.
+It defaults to &quot;false&quot;. Configuration details for all components are provided in the
+<a xmlns:xlink="http://www.w3.org/1999/xlink" href="api/index.cfm" rel="nofollow" title="api/index.cfm">API documentation</a>.
+</div>
+
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="dispatcher" />3.2.1. Dispatcher</h3>
+</div>
+</div>
+</div>
+<p>
+When an application event occurs (i.e. OnRequestStart() ), an appropriate handler is searched for.
+If a handler is found, the execution chain associated with the handler (preprocessors, postprocessors, and controllers) will be executed.
+The <code class="literal">Dispatcher</code> requires several configuration parameters which are typically set in <code class="literal">Application.cfc</code> for visibility:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.1.&nbsp;Dispatcher configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="Dispatcher configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">this['contextConfigLocation']</code></td><td>The location of the ColdSpring configuration file. No Default. MUST be configured.</td></tr>
+				<tr><td><code class="literal">this['contextClass']</code></td><td>The class for the Dispatcher's WebApplicationContext. Defaults to &quot;org.gliint.framework.context.DefaultWebApplicationContext&quot;</td></tr>
+				<tr><td><code class="literal">this['contextScope']</code></td><td>The ColdFusion scope which will contain the WebApplicationContext. Defaults to &quot;application&quot;.</td></tr>
+				<tr><td><code class="literal">this['handler_mapping_bean_name']</code></td><td>Name of the WebApplicationContext bean performing handler mappings. Defaults to &quot;simpleHandlerMapping&quot;</td></tr>
+				<tr><td><code class="literal">this['allowRefresh']</code></td><td>A boolean which determines whether a WebApplicationContext can be refreshed. Defaults to &quot;true&quot;</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="handlermappings" />3.2.2. HandlerMappings</h3>
+</div>
+</div>
+</div>
+<p>
+A <code class="literal">HandlerMapping</code> defines a mapping between requests and handlers.
+They deliver a <code class="literal">HandlerExecutionChain</code>, which must contain the handler that matches the incoming request,
+and may also contain a list of handler interceptors that are applied to the request.
+When a request comes in, the <code class="literal">Dispatcher</code> will hand it over to the handler mapping to let it inspect the request and determine the correct <code class="literal">HandlerExecutionChain</code>.
+Then the <code class="literal">Dispatcher</code> will execute the handler and interceptors (if any) in the chain.
+</p>
+<p>
+<code class="literal">HandlerMappings</code> should extend the <code class="literal">BaseHandlerMapping</code> component, which contains these minimal configuration parameters:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.2.&nbsp;HandlerMapping configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="HandlerMapping configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">order</code></td><td>Not currently implemented. When implemented, will sort all handler mappings available in the context based on the value of this property and apply the first matching handler. Defaults to 0.</td></tr>
+				<tr><td><code class="literal">defaultHandler</code></td><td>The default handler to use when this handler mapping does not result in a matching handler. No Default. MUST be configured. Should always be the GliintController</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>HandlerMapping configuration example</b></a></p>
+<pre>
+	&lt;bean id="simpleHandlerMapping" class="org.gliint.framework.handler.mapping.SimpleHandlerMapping" singleton="true"&gt;
+		&lt;property name="shouldTrace"&gt;&lt;value&gt;true&lt;/value&gt;&lt;/property&gt;
+		&lt;property name="order"&gt;&lt;value&gt;0&lt;/value&gt;&lt;/property&gt;
+		&lt;property name="defaultHandler"&gt;&lt;ref bean="gliintController"/&gt;&lt;/property&gt;
+	&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="handlerexecutionchains" />3.2.2.1. HandlerExecutionChains</h3>
+</div>
+</div>
+</div>
+<p>
+<code class="literal">HandlerExecutionChains</code> are composed of exactly one Handler (controller) and zero or more <code class="literal">HandlerInterceptors</code>, which are capable of intercepting incoming requests.
+They are constructed using their init() method with their Handler and, optionally, an array of <code class="literal">HandlerInterceptors</code>.
+</p>
+</div>
+
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="handlerinterceptors" />3.2.3. HandlerInterceptors</h3>
+</div>
+</div>
+</div>
+<p>
+The handler mapping mechanism has the notion of HandlerInterceptors which can be useful when to apply specific functionality to certain requests.
+Interception is well suited for logging, security, auditing, and the like, and Gliint appropriates this notion into it's Connectors.
+</p>
+<p>
+<code class="literal">HandlerInterceptors</code> located in the handler mapping must implement <code class="literal">BaseHandlerInterceptor</code> from the <code class="literal">org.gliint.framework.handler</code> package.
+This base class defines three methods, one that will be called <span class="emphasis"><em>before</em></span> the actual handler will be executed,
+one that will be called <span class="emphasis"><em>after</em></span> the handler is executed,
+and one that is called <span class="emphasis"><em>after the complete request has finished</em></span>.
+These three methods provide enough flexibility to do all kinds of pre- and post-processing tasks.
+<code class="literal">HandlerInterceptors</code> are configurable using the <code class="literal">configuration</code> property:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.3.1.&nbsp;Connector configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="Connector configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">configuration</code></td><td>a structure (map) of configuration data</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="connectors" />3.2.3.1. Connectors</h3>
+</div>
+</div>
+</div>
+<p>
+A Gliint <code class="literal">Connector</code> is a <code class="literal">HandlerInterceptor</code> extended from the <code class="literal">BaseHandlerInterceptor</code>.
+<code class="literal">Connectors</code> format an incoming request into a well-known structure (map) which is utilized by the <code class="literal">GliintController</code> and subsequent <code class="literal">CommandHandlers</code> as a model (the 'M' in MVC).
+When processing is complete, any number of <code class="literal">Connectors</code> may return views based on that model.
+All <code class="literal">Connectors</code> should use the inherited <code class="literal">configuration</code> property.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="httpconnector" />3.2.3.2. HTTPConnector</h3>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">HTTPConnector</code> provided by the framework is a simple but useful bean factory aware component.
+Its responsibility is to marshall form, url, cgi, and httpRequest data into a structure (map) when it's preHandle() method is executed,
+and to write 
+
+It requires a special set of configuration properties:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.3.2.&nbsp;HTTPConnector configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="HTTPConnector configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">configuration</code></td><td>ignored</td></tr>
+				<tr><td><code class="literal">preHandleApplicationEvents</code></td><td>a list of ColdFusion application events (i.e. onRequestStart). The preHandle() method will execute for each applicationEvent. Defaults to &quot;onRequestStart&quot;.</td></tr>
+				<tr><td><code class="literal">preHandleScopeSequence</code></td><td>a list of ColdFusion scopes which will be inspected for variables. Defaults to &quot;url,form,cgi,httpRequestData&quot;.</td></tr>
+				<tr><td><code class="literal">preHandleUrl</code></td><td>a list of url variables to capture. Defaults to &quot;*&quot; (all).</td></tr>
+				<tr><td><code class="literal">preHandleForm</code></td><td>a list of form variables to capture. Defaults to &quot;*&quot; (all).</td></tr>
+				<tr><td><code class="literal">preHandleCgi</code></td><td>a list of cgi variables to capture. Defaults to &quot;REMOTE_ADDR,SERVER_PORT,SERVER_PORT_SECURE,SERVER_NAME&quot;.</td></tr>
+				<tr><td><code class="literal">preHandleHttpRequestData</code></td><td>a list of httpRequestData variables to capture. Defaults to &quot;headers,method&quot;.</td></tr>
+				<tr><td><code class="literal">postHandleApplicationEvents</code></td><td>a list of ColdFusion application events (i.e. onRequestEnd ). The postHandle() method will execute for each applicationEvent. Defaults to &quot;onRequestEnd&quot;.</td></tr>
+				<tr><td><code class="literal">postHandleShowDebugOutput</code></td><td>Boolean which determines if debug output will be displayed when ColdFusion debugging output is enabled. Defaults to &quot;false&quot;.</td></tr>
+				<tr><td><code class="literal">postHandleShowTrace</code></td><td> Boolean which determines if ColdFusion traces will be provided to the output view writing delegate. Defaults to &quot;false&quot;.</td></tr>
+				<tr><td><code class="literal">postHandleWriterResolution</code></td><td>Delegate for view output. One of: &quot;include&quot;, &quot;module&quot;, &quot;component&quot;, &quot;bean&quot;. REQUIRED</td></tr>
+				<tr><td><code class="literal">postHandleWriterLocation</code></td>
+						<td>
+						REQUIRED. No default.
+						<br/>if writerResolution is "include" or "module", location of ColdFusion template.
+						<br/>if writerResolution is "component", path to ColdFusion component, must be used in conjunction with <code class="literal">postHandleWriterLocation</code>.
+						<br/>if writerResolution is "bean", name of bean known to the beanFactory containing this component, must be used in conjunction with <code class="literal">postHandleWriterLocation</code>.
+						</td>
+				</tr>
+				<tr><td><code class="literal">postHandleWriterMethod</code></td><td> OPTIONAL, method to be invoked on component or bean</td></tr>
+				<tr><td><code class="literal">shouldClearOutputBuffer</code></td><td>Boolean which determines if the output buffer should be cleared prior to output rendering. Defaults to &quot;true&quot;.</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+				<tr><td><code class="literal">traceRenderer</code></td><td>Delegate which will provide rendered traces to the <code class="literal">postHandleWriterResolution</code> if <code class="literal">shouldTrace</code> is true.  Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>HTTPConnector configuration example</b></a></p>
+<pre>
+&lt;bean id="htmlConnector" class="org.gliint.framework.connector.HTTPConnector" singleton="true"&gt;
+	&lt;property name="shouldClearOutputBuffer"&gt;&lt;value&gt;true&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="traceRenderer"&gt;
+		&lt;bean id="htmlTraceRenderer" class="org.gliint.framework.util.HTMLTraceRenderer" singleton="true" /&gt;
+	&lt;/property&gt;
+	&lt;property name="preHandleApplicationEvents"&gt;&lt;value&gt;onRequestStart&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="postHandleApplicationEvents"&gt;&lt;value&gt;onRequestEnd&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="postHandleShowDebugOutput"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="postHandleShowTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="postHandleWriterResolution"&gt;&lt;value&gt;module&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="postHandleWriterLocation"&gt;&lt;value&gt;/org/gliint/tests/integration/view/nameView.cfm&lt;/value&gt;&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+<!-- end of 3.2.3 -->
+</div>
+
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="gliintcontroller" />3.2.4. Gliint Controller</h3>
+</div>
+</div>
+</div>
+<p>
+Controllers (the "C" in MVC) typically provide access to a service layer and handle user input, coercing it into a  "model" that will be later be represented to the user by the view.
+The standard Gliint installation contains the <code class="literal">GliintController</code>, a singleton Handler placed in the <code class="literal">HandlerExecutionChain</code>,
+that converts request data into Commands and processes them.
+The <code class="literal">GliintController</code> is composed with several delegates, making it easier for the developer to customize or extend functionality when necessary.
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table 3.2.4. GliintController configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="GliintController configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">beaner</code></td><td>a component which will create transient beans and optionally fill them with request data</td></tr>
+				<tr><td><code class="literal">commandBinding</code></td><td>one of: "name", "notify", or "multicast", determines how a request is initially processed. Defaults to &quot;name&quot;</td></tr>
+				<tr><td><code class="literal">commandContextClass</code></td><td>name of class used as Command Context. Defaults to &quot;org.gliint.framework.command.CommandContext&quot;</td></tr>
+				<tr><td><code class="literal">commandDispatcher</code></td><td>a component to dispatch (invoke) Commands for processing</td></tr>
+				<tr><td><code class="literal">commandFactory</code></td><td>a component to create Commands</td></tr>
+				<tr><td><code class="literal">handleApplicationEvents</code></td><td>ColdFusion Application Events in this comma delimited list will not be used as Command names</td></tr>
+				<tr><td><code class="literal">maximumCommands</code></td><td>the maximum number of commands to be performed by a single request</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>GliintController configuration example</b></a></p>
+<pre>
+
+&lt;bean id="gliintController" class="org.gliint.framework.GliintController" singleton="true"&gt;
+	&lt;property name="beaner"&gt;&lt;ref bean="beaner"/&gt;&lt;/property&gt;
+	&lt;property name="commandBinding"&gt;&lt;value&gt;name&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="commandContextClass"&gt;&lt;value&gt;org.gliint.framework.command.CommandContext&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="commandDispatcher"&gt;&lt;ref bean="dispatch" /&gt;&lt;/property&gt;
+	&lt;property name="commandFactory"&gt;&lt;ref bean="commandFactory" /&gt;&lt;/property&gt;
+	&lt;property name="handleApplicationEvents"&gt;&lt;value&gt;onRequestStart&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="maximumCommands"&gt;&lt;value&gt;60&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+&lt;/bean&gt;
+
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commanddispatcher" />3.2.4.1 Command Dispatcher</h3>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">GliintController</code> delegates it's dispatching duties to a Command Dispatcher, typically the
+<code class="literal">Dispatch</code> component in package <code class="literal">org.gliint.framework.lexicon</code>.
+It follows the same design pattern as the <code class="literal">Dispatcher</code>, i.e. finding an execution chain with a handler
+and some optional pre- and post- processors. It requires several parameters for it's operations:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.4.1.1.&nbsp;Command Dispatcher configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="Command Dispatcher configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">handlermapping</code></td><td>A component to match <code class="literal">Commands</code> with handlers, see CommandHandler mappings below</td></tr>
+				<tr><td><code class="literal">access</code></td><td>Boolean which determines if the commandHandler can be called from a public command. Defaults to &quot;public&quot;</td></tr>
+				<tr><td><code class="literal">comment</code></td><td>Optional descriptive comment</td></tr>
+				<tr><td><code class="literal">name</code></td><td>System wide unique name for this commandHandler, defaults to the full dotted component path</td></tr>
+				<tr><td><code class="literal">resultClass</code></td><td>path to the component to be instantiated as Result. Defaults to &quot;org.gliint.framework.util.Result&quot;</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>Command Dispatcher configuration example</b></a></p>
+<pre>
+&lt;bean id="dispatch" class="org.gliint.framework.lexicon.Dispatch" singleton="true"&gt;
+	&lt;property name="handlerMapping" &gt;&lt;ref bean="gliintCommandHandlerMapping" /&gt;&lt;/property&gt;
+	&lt;property name="access"&gt;&lt;value&gt;private&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="name"&gt;&lt;value&gt;org.gliint.framework.lexicon.Dispatch&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="comment"&gt;&lt;value&gt;The Command Dispatcher&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commandhandlermappings" />3.2.4.2 CommandHandler mappings</h3>
+</div>
+</div>
+</div>
+<p>
+When the <code class="literal">GliintController</code> handles a <code class="literal">Command</code>,
+its Command Dispatcher uses the <code class="literal">GliintCommandHandlerMapping</code> to defines a mapping between the <code class="literal">Command</code> and a
+<code class="literal">HandlerExecutionChain</code> containing a <code class="literal">CommandHandler</code> and an optional array of handler interceptors.
+The <code class="literal">HandlerExecutionChains</code> are typically persistent singletons known to the bean factory (ColdSpring).
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.4.2.1. GliintCommandHandlerMapping configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="GliintCommandHandlerMapping configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">order</code></td><td>Not currently implemented. When implemented, will sort all handler mappings available in the context based on the value of this property and apply the first matching handler. Defaults to 0.</td></tr>
+				<tr><td><code class="literal">defaultHandler</code></td><td>The <code class="literal">HandlerExecutionChain</code> selected when there is no matching handler.</td></tr>
+				<tr><td><code class="literal">invalidAccessHandler</code></td><td>The <code class="literal">HandlerExecutionChain</code> selected when a private <code class="literal">CommandHandler</code> is requested by a public <code class="literal">Command</code></td></tr>
+				<tr><td><code class="literal">multicastHandler</code></td><td>The <code class="literal">HandlerExecutionChain</code> selected when the <code class="literal">Command</code> has a 'multicast' bind parameter</td></tr>
+				<tr><td><code class="literal">notifyHandler</code></td><td>The <code class="literal">HandlerExecutionChain</code> selected when the <code class="literal">Command</code> has a 'notify' bind parameter</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>GliintCommandHandlerMapping configuration example</b></a></p>
+<pre>
+&lt;bean id="gliintCommandHandlerMapping" class="org.gliint.framework.handler.mapping.GliintCommandHandlerMapping" singleton="true"&gt;
+	&lt;property name="order"&gt;&lt;value&gt;0&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="defaultHandler"&gt;&lt;ref bean="default" /&gt;&lt;/property&gt;
+	&lt;property name="invalidAccessHandler"&gt;&lt;ref bean="warnInvalidAccess" /&gt;&lt;/property&gt;
+	&lt;property name="multicastHandler"&gt;&lt;ref bean="multicast" /&gt;&lt;/property&gt;
+	&lt;property name="notifyHandler"&gt;&lt;ref bean="notify" /&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commandfactory" />3.2.4.3 CommandFactory</h3>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">CommandFactory</code> is used by the Gliint Controller to create the<code class="literal">Commands</code> used for normal processing.
+It requires several parameters for it's operations:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.4.3.1.&nbsp;CommandFactory configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="CommandFactory configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">publicCommandName</code></td><td>Reserved name of a key which may be found in the request. Defaults to &quot;event&quot;</td></tr>
+				<tr><td><code class="literal">publicCommandDefaultValue</code></td><td>Default value for the <code class="literal">publicCommandName</code> if the key is not found in the request. Defaults to &quot;default&quot;</td></tr>
+				<tr><td><code class="literal">commandClass</code></td><td>Dotted path notation to the component to be created for <code class="literal">Command</code> instances. Defaults to &quot;org.gliint.framework.command.Command&quot;</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>CommandFactory configuration example</b></a></p>
+<pre>
+&lt;bean id="commandFactory" class="org.gliint.framework.command.CommandFactory" singleton="true"&gt;
+	&lt;property name="commandClass"&gt;&lt;value&gt;org.gliint.framework.command.Command&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="publicCommandName"&gt;&lt;value&gt;event&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="publicCommandDefaultValue"&gt;&lt;value&gt;default&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commands" />3.2.5. Commands</h3>
+</div>
+</div>
+</div>
+<p>
+Gliint's <code class="literal">Commands</code> are simple transient beans which can be &quot;public&quot;, that is, generated from the request, or &quot;private&quot; - unavailable to outside requests.
+A <code class="literal">Command</code> is constructed during it's init() method with the following instance variables:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.5.&nbsp;Command configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="Command configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">name</code></td><td>The system wide unique name for the command. Required</td></tr>
+				<tr><td><code class="literal">bind</code></td><td>One of "name", "notify", or "multicast", determines how the command is mapped. Optional. Defaults to &quot;name&quot;.</td></tr>
+				<tr><td><code class="literal">args</code></td><td>A structure (map) of arbitrary keys and values. Optional. Defaults to empty structure.</td></tr>
+				<tr><td><code class="literal">isPublic</code></td><td>A boolean that allows public access from a request. Optional Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commandhandlers" />3.2.6. CommandHandlers</h3>
+</div>
+</div>
+</div>
+<p>
+<code class="literal">CommandHandlers</code> perform the actual work managing the model and preparing for view resolution; since they're composed with ColdSpring they can easily
+be provided with Service layer beans as needed thereby reducing the need for services to be wired to other services. All commandHandlers used with Gliint must extend the
+<code class="literal">BaseCommandHandler</code> component in package <code class="literal">org.gliint.framework.handler</code>, which is bean factory aware for legacy reasons.
+<code class="literal">CommandHandlers</code> should only be used as the handler in a <code class="literal">HandlerExecutionChain</code>
+The <code class="literal">BaseCommandHandler</code> has the following configurable properties:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table 3.2.6.1. CommandHandler configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="CommandHandler configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">access</code></td><td>Determines if the commandHandler can be called from a public command. One of: &quot;public&quot;, &quot;private&quot;. Optional. Defaults to &quot;public&quot;</td></tr>
+				<tr><td><code class="literal">comment</code></td><td>Optional descriptive comment. Defaults to an empty string.</td></tr>
+				<tr><td><code class="literal">name</code></td><td>System wide unique name for this commandHandler. Optional. Defaults to the full dotted component path</td></tr>
+				<tr><td><code class="literal">resultClass</code></td><td>Path to the component to be instantiated as Result. Optional. Defaults to &quot;org.gliint.framework.util.Result&quot;</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>A boolean determining if traces will be written by this component. ColdFusion debugging and tracing must be on. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>HandlerExecutionChain with CommandHandler configuration example</b></a></p>
+<pre>
+&lt;bean id="no-op" class="org.gliint.framework.HandlerExecutionChain" singleton="true"&gt;
+	&lt;constructor-arg name="handler"&gt;
+		&lt;bean class="org.gliint.framework.lexicon.Nop" singleton="true"&gt;
+			&lt;constructor-arg name="access"&gt;&lt;value&gt;private&lt;/value&gt;&lt;/constructor-arg&gt;
+		&lt;/bean&gt;
+	&lt;/constructor-arg&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="responseinterceptors" />3.2.7. ResponseInterceptors</h3>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">ResponseInterceptor</code> is a powerful, configurable interceptor which can create beans and perform simple expression substitutions in the response (model) structure (map),
+typically added to any <code class="literal">HandlerExecutionChain</code> as a preprocessor.
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.7.1.&nbsp; ResponseInterceptor configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="ResponseInterceptor configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">beaner</code></td><td>a component that will create transient beans and optionally fill them with request data</td></tr>
+				<tr><td><code class="literal">configuration</code></td><td>a complex structure (map) described below</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+				<tr><td><code class="literal">valueParser</code></td><td>a component that will create values based on a simple expression language</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p>
+The <code class="literal">ResponseInterceptor</code>'s <code class="literal">configuration</code> property must be a structure (map) with at least one of two optional keys: &quot;preHandle&quot; and/or &quot;postHandle&quot;
+,which will be applied with the corresponding method. Each key must contain a one dimensional array (list) of where each element of the array is a structure (map).
+Each structure must use a set of a predetermined keys, and will produce or overwrite a single item in the response model.
+ </p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.7.2.&nbsp; ResponseInterceptor configuration details:</b></a></p>
+	<div class="table-contents">
+		<table summary="ResponseInterceptor configuration details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td>name</td><td>the name of the response key to be created</td></tr>
+				<tr><td>value</td><td>a literal or expression (refer to the ValueParser), cannot be used with class or factory-bean.</td></tr>
+				<tr><td>class</td><td>dotted path notation to the class of a new transient bean, cannot be used with value or factory-bean</td></tr>
+				<tr><td>factory-bean</td><td>name of a factory bean known to ColdSpring, used in conjunction with factory-method. Cannot be used with value or class</td></tr>
+				<tr><td>factory-method</td><td>method to be executed on factory-bean for a new transient bean</td></tr>
+				<tr><td>fields</td><td>a comma delimited list of field names to be provided to populate the bean's instance data</td></tr>
+				<tr><td>method</td><td>method to be performed on the bean created by class to populate the bean's instance data</td></tr>
+				<tr><td>args</td><td>a structure (map) of arbitrary keys and values to be provided as arguments to the specified method</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>ResponseInterceptor configuration example</b></a></p>
+<pre>
+&lt;bean class="org.gliint.framework.handler.ResponseInterceptor" singleton="true"&gt;
+	&lt;property name="beaner"&gt;&lt;ref bean="beaner" /&gt;&lt;/property&gt;
+	&lt;property name="valueParser"&gt;&lt;ref bean="valueParser"/&gt;&lt;/property&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="configuration"&gt;
+		&lt;map&gt;
+			&lt;entry key="preHandle"&gt;
+				&lt;list&gt;
+					&lt;map&gt;
+						&lt;entry key="name"&gt;&lt;value&gt;htmlViewId&lt;/value&gt;&lt;/entry&gt;
+						&lt;entry key="value"&gt;&lt;value&gt;homepage&lt;/value&gt;&lt;/entry&gt;
+					&lt;/map&gt;
+					&lt;map&gt;
+						&lt;entry key="name"&gt;&lt;value&gt;fluglebean&lt;/value&gt;&lt;/entry&gt;
+						&lt;entry key="class"&gt;&lt;value&gt;path.to.bean.class&lt;/entry&gt;
+						&lt;entry key="fields"&gt;&lt;value&gt;*&lt;/value&gt;&lt;/entry&gt;
+					&lt;/map&gt;
+				&lt;/list&gt;
+			&lt;/entry&gt;
+			&lt;entry key="postHandle"&gt;
+				&lt;list&gt;&lt;/list&gt;
+			&lt;/entry&gt;
+		&lt;/map&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="ruleinterceptors" />3.2.8. RuleInterceptors</h3>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">RuleInterceptor</code> is a configurable interceptor which can control processing by examining a simple set of
+rules and their corresponding conditions. When a rule's conditions are true, new key(s) will be placed in the 
+responses structure (model), and/or <code class="literal">Command</code>(s) may be dispatched.
+Rules are typically used as postprocessors after a <code class="literal">HandlerExecutionChain</code>'s
+<code class="literal">CommandHandler</code> has already executed and set some responses.
+The <code class="literal">RuleInterceptor</code> should normally be the last interceptor in a <code class="literal">HandlerExecutionChain</code>
+due to the extraordinary way it can influence processing.
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.1.&nbsp;RuleInterceptor configuration parameters:</b></a></p>
+	<div class="table-contents">
+		<table summary="RuleInterceptor configuration parameters:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Parameter</th><th>Explanation</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">configuration</code></td><td>a structure (map) of configuration data</td></tr>
+				<tr><td><code class="literal">shouldTrace</code></td><td>Boolean which determines when ColdFusion debugging is on whether traces by this component will be written. Defaults to &quot;false&quot;.</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p>
+The <code class="literal">RuleInterceptor</code>'s <code class="literal">configuration</code> property must be a structure (map) with at 
+least one of two optional keys: &quot;preHandle&quot; and/or &quot;postHandle&quot;
+,which will be applied with the corresponding method. Each key must contain a one dimensional array (list) of where each element
+of the array is a structure (map) with four predefined keys.
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.2.&nbsp; Rule array (list) configuration details:</b></a></p>
+	<div class="table-contents">
+		<table summary="Rule array (list) configuration details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">onMatch</code></td><td>one of: &quot;do&quot;, &quot;halt&quot;, &quot;clear&quot;, &quot;clearandenqueue&quot;, &quot;enqueue&quot;, &quot;enstack&quot;, &quot;next&quot;, processing details provided below. Required</td></tr>
+				<tr><td><code class="literal">conditions</code></td><td>an optional array where each element is a structure with predefined keys, details below. A rule with no conditions is considered true.</td></tr>
+				<tr><td><code class="literal">responses</code></td><td>an optional array where each element is a structure with predefined keys, details below</td></tr>
+				<tr><td><code class="literal">commands</code></td><td>an optional array where each element is a structure with predefined keys, details below</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p>
+The first rule where all conditions are true will qualify it to be processed, and the rest will be ignored.
+When no rules qualify, no action will be taken.
+Responses are always written in the sequence specified (if any), before <code class="literal">Commands</code> are processed or placed in the Deque.
+The onMatch configuration property determines how processing will proceed:
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.3.&nbsp; Rule onMatch configuration property values:</b></a></p>
+	<div class="table-contents">
+		<table summary="Rule onMatch configuration property values:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>onMatch Parameter</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td>do</td><td>the rule's responses are written and <code class="literal">Commands</code> are processed immediately</td></tr>
+				<tr><td>halt</td>
+					<td>
+						if the halt occurs during preHandle() the <code class="literal">CommandHandler</code> will not be executed ( since preHandle() returns FALSE),
+							 responses are written but <code class="literal">Commands</code> (if any) are ignored,
+							 subsequent interceptors (if any) are not processed,
+							 the deque is cleared (remaining <code class="literal">Commands</code> are not processed);
+						<br/>if the halt occurs during postHandle() the <code class="literal">CommandHandler</code> has already executed,
+							 responses are written but <code class="literal">Commands</code> (if any) are ignored,
+							 subsequent interceptors (if any) ARE processed,
+							 the deque is cleared (remaining <code class="literal">Commands</code> are not processed)
+					</td></tr>
+				<tr><td>clear</td><td>the <code class="literal">CommandHandler</code> will be/was executed; responses are written but <code class="literal">Commands</code> (if any) are ignored, the deque is cleared (remaining <code class="literal">Commands</code> are not processed)</td></tr>
+				<tr><td>clearthenenqueue</td><td>the <code class="literal">CommandHandler</code> will be/was executed, responses are written, the deque is cleared, then the rule's <code class="literal">Commands</code> are enqueued</td></tr>
+				<tr><td>enqueue</td><td>the <code class="literal">CommandHandler</code> will be/was executed, responses are written, the rule's <code class="literal">Commands</code> are enqueued (the deque is NOT cleared)</td></tr>
+				<tr><td>enstack</td><td>the <code class="literal">CommandHandler</code> will be/was executed, responses are written, the rule's <code class="literal">Commands</code> are enstacked (the deque is NOT cleared)</td></tr>
+				<tr><td>next</td><td>he <code class="literal">CommandHandler</code> will be/was executed, responses are written, but the rule's <code class="literal">Commands</code> are ignored (the deque is NOT cleared)</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+
+<p>
+A condition consists of a key, an operator, and a value, for example, &quot;myDog&quot; &quot;eq&quot; &quot;Fido&quot;.
+The value for the key (myDog) is retrieved from the responses and then compared to the value parameter.
+Only the top level responses qualify for retrieval, and only literals can be used.
+The value is ignored for the "exists" and "doesnotexist" operators for obvious reasons.
+</p>
+<p>
+Each <code class="literal">Command</code> for a valid rule must follow the same configuration details as specified in <a href="#commands">3.2.6. Commands</a>
+, with the exception that the isPublic parameter is not needed; all <code class="literal">Commands</code> generated by rule are private.
+</p>
+<p>
+Each response to be placed in the Responses must be literal names and values.
+</p>
+
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.4.&nbsp; Rule Condition array (list) configuration details:</b></a></p>
+	<div class="table-contents">
+		<table summary="Rule Condition array (list) configuration details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">key</code></td><td>name of the response key. Required</td></tr>
+				<tr><td><code class="literal">operator</code></td><td>one of &quot;eq&quot;, &quot;neq&quot;, &quot;lt&quot;, &quot;lte&quot;, &quot;gt&quot;, &quot;gte&quot;, &quot;contains&quot;, &quot;doesnotcontain&quot;, &quot;exists&quot;, &quot;doesnotexist&quot;, &quot;typeof&quot; . Required</td></tr>
+				<tr><td><code class="literal">value</code></td><td>a literal value. Required</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.5.&nbsp; Rule Command array (list) configuration details:</b></a></p>
+	<div class="table-contents">
+		<table summary="Rule Command array (list) configuration details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">name</code></td><td>the name of the <code class="literal">Command</code></td></tr>
+				<tr><td><code class="literal">bind</code></td><td>one of &quot;name&quot;, &quot;notify&quot;, or &quot;multicast&quot;, determines how the command is matched</td></tr>
+				<tr><td><code class="literal">args</code></td><td>an optional structure (map) of arbitrary keys and values</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;3.2.8.6.&nbsp; Rule Response array (list) configuration details:</b></a></p>
+	<div class="table-contents">
+		<table summary="Rule Response array (list) configuration details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td><code class="literal">name</code></td><td>name of the response key. If the name already exists, the value will be overwritten. Required</td></tr>
+				<tr><td><code class="literal">value</code></td><td>a literal value. Required</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<a id="d0e151"><br class="table-break" /></a>
+<p class="title"><a id="d0e151"><b>RuleInterceptor configuration example</b></a></p>
+<pre>
+&lt;bean class="org.gliint.framework.handler.RuleInterceptor" singleton="true"&gt;
+	&lt;property name="shouldTrace"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/property&gt;
+	&lt;property name="configuration"&gt;
+		&lt;map&gt;
+			&lt;entry key="preHandle"&gt;
+				&lt;list&gt;&lt;/list&gt;
+			&lt;/entry&gt;
+			&lt;entry key="postHandle"&gt;
+				&lt;list&gt;
+					&lt;map&gt;
+						&lt;entry key="onMatch"&gt;&lt;value&gt;clearandenqueue&lt;/value&gt;&lt;/entry&gt;
+						&lt;entry key="conditions"&gt;
+							&lt;list&gt;
+								&lt;map&gt;
+									&lt;entry key="key"&gt;&lt;value&gt;isValid&lt;/value&gt;&lt;/entry&gt;
+									&lt;entry key="operator"&gt;eq&lt;value&gt;&lt;/value&gt;&lt;/entry&gt;
+									&lt;entry key="value"&gt;&lt;value&gt;false&lt;/value&gt;&lt;/entry&gt;
+								&lt;/map&gt;
+							&lt;/list&gt;
+						&lt;/entry&gt;
+						&lt;entry key="responses"&gt;
+							&lt;list&gt;
+								&lt;map&gt;
+									&lt;entry key="name"&gt;&lt;value&gt;htmlViewId&lt;/value&gt;&lt;/entry&gt;
+									&lt;entry key="name"&gt;&lt;value&gt;fooForm&lt;/value&gt;&lt;/entry&gt;
+								&lt;/map&gt;
+							&lt;/list&gt;
+						&lt;/entry&gt;
+						&lt;entry key="commands"&gt;
+							&lt;list&gt;
+								&lt;map&gt;
+									&lt;entry key="name"&gt;&lt;value&gt;prepareFooForm&lt;/value&gt;&lt;/entry&gt;
+									&lt;entry key="bind"&gt;&lt;value&gt;notify&lt;/value&gt;&lt;/entry&gt;
+								&lt;/map&gt;
+							&lt;/list&gt;
+						&lt;/entry&gt;
+					&lt;/map&gt;
+					&lt;map&gt;
+						&lt;entry key="onMatch"&gt;&lt;value&gt;next&lt;/value&gt;&lt;/entry&gt;
+						&lt;!-- no conditions make this the default rule --&gt;
+						&lt;entry key="conditions"&gt;&lt;list&gt;&lt;/list&gt;&lt;/entry&gt;
+							&lt;list&gt;
+								&lt;map&gt;
+									&lt;entry key="name"&gt;&lt;value&gt;htmlViewId&lt;/value&gt;&lt;/entry&gt;
+									&lt;entry key="name"&gt;&lt;value&gt;fooThankYou&lt;/value&gt;&lt;/entry&gt;
+								&lt;/map&gt;
+							&lt;/list&gt;
+						&lt;entry key="commands"&gt;&lt;list&gt;&lt;/list&gt;&lt;/entry&gt;
+					&lt;/map&gt;
+				&lt;/list&gt;
+			&lt;/entry&gt;
+		&lt;/map&gt;
+	&lt;/property&gt;
+&lt;/bean&gt;
+</pre>
+</div>
+
+<div class="chapter" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="tutorials" />Chapter 4. Tutorials</h2>
+</div>
+</div>
+</div>
+<div class="toc">
+<dl>
+	<dt><span class="section"><a href="#usingcommandhandlers">4.1. Using the CommandHandlers</a></span></dt>
+	<dt><span class="section"><a href="#usingthecommandcontext">4.2. Using the Command Context</a></span></dt>
+		<dd>
+			<dl>
+			<dt><span class="section"><a href="#responses">4.2.1. Responses</a></span></dt>
+			<dt><span class="section"><a href="#commandbubbling">4.2.2. Command Bubbling</a></span></dt>
+			<dt><span class="section"><a href="#hierarchicalcommandcontexts">4.2.3. Hierarchical CommandContexts</a></span></dt>
+			</dl>
+		</dd>
+</dl>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="usingcommandhandlers" />4.1. Using CommandHandlers</h2>
+</div>
+</div>
+</div>
+<p>
+Simply put, Gliint's <code class="literal">CommandHandlers</code> DO something; they provide the basic functionality of the framework by connecting
+<code class="literal">Commands</code> to code executing the intended actions, typically found in the objects of a Service Layer.
+They can perform simple, atomic operations or complex orchestrations employing multiple Service Layer objects and/or invoking additional <code class="literal">Commands</code>.
+Careful crafting of the <code class="literal">CommandHandlers</code> in a system can provide exceptional benefit in terms of reusability, abstraction, loose coupling,
+encapsulation, and composability.
+</p>
+<p>
+Every <code class="literal">CommandHandler</code> must contain an execute() method that is provided two arguments necessary for processing,
+<code class="literal">Command</code> and <code class="literal">CommandContext</code>.
+The <code class="literal">Command</code> describes the action, and the <code class="literal">CommandHandler</code> performs the action with the help of the
+<code class="literal">CommandContext</code> and helpers mixed in or wired in from the Bean Factory (ColdSpring).
+Pre and Post handling interceptors, like the <code class="literal">ResponseInterceptor</code> and <code class="literal">RuleInterceptor</code>,  may also play a helpful part of the command handling process.
+</p>
+
+<p>
+Developers may find it helpful for a <code class="literal">CommandHandler</code> to report on the success (or failure) of it's operations, so
+Gliint's <code class="literal">BaseCommandHandler</code> contains the newResult() method, which creates an object of the class set by configuration;
+this might be the case, for example, when handling an exception, or returning validation results.
+The result object, when filled with data, may be placed in the <code class="literal">CommandContext</code> for later disposition.
+The variable returned from an execute() method is effectively ignored and exists for legacy reasons only.
+</p>
+
+<p>
+While <code class="literal">CommandHandlers</code> are expected to provide exception handling within their execute() methods,
+uncaught exceptions will be caught and handled by the handleException() method of the <code class="literal">GliintController</code>
+commandDispatcher delegate, which DOES NOT stop processing, although it does write a trace to the trace log if debugging and tracing are turned on.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h2 class="title"><a id="usingthecommandcontext" />4.2. Using the Command Context</h2>
+</div>
+</div>
+</div>
+<p>
+The <code class="literal">CommandContext</code> provides both the model and framework methods which support <code class="literal">CommandHandler</code> operations.
+Developers can extend or replace the component as additional functions are needed.
+For each application event dispatched for an individual request, the <code class="literal">GliintController</code> creates a <code class="literal">CommandContext</code>
+object, and also derives a <code class="literal">Command</code> from the request (this could simply be the default <code class="literal">Command</code>).
+The <code class="literal">GliintController</code> then uses its commandDispatcher delegate to match a <code class="literal">Command</code> with a
+<code class="literal">HandlerExecutionChain</code>, calling the execute() method of its handler (a <code class="literal">CommandHandler</code>) to perform the operation intended.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="responses" />4.2.1. Responses</h3>
+</div>
+</div>
+</div>
+<p>
+Gliint's Model is a structure (map) called &quot;responses&quot; maintained by the <code class="literal">CommandContext</code>, and the <code class="literal">CommandContext</code>
+provides a complete set of methods to support the responses' keys.
+<code class="literal">CommandHandlers</code> are expected to use these methods extensively to examine and maniuplate the Responses, for example, first calling a Service method
+to retrieve a query and then placing the query in the responses.
+The Responses are created by the Connector attached to the originating request (by calling the BaseConnector's preHandle() method).
+They are used by the <code class="literal">GliintController</code> to initialize the <code class="literal">CommandContext</code>, and upon the completion of Deque processing
+they are intercepted by the Connectors' postHandle() methods, and, finally, returned the Dispatcher for rendering.
+The Responses are constructed with a set of predefined keys, meant to assist processing, beginning with the underscore character.
+Developers should manipulate these keys with extra care (be especially cautious never to overwrite the _request key):
+</p>
+<div class="table">
+	<a id="d0e151"></a>
+	<p class="title"><a id="d0e151"><b>Table&nbsp;4.2.1.&nbsp; Responses details:</b></a></p>
+	<div class="table-contents">
+		<table summary="Responses details:" border="1">
+			<colgroup><col></col></colgroup>
+			<thead><tr><th>Key</th><th>Description</th></tr></thead>
+			<tbody>
+				<tr><td>_applicationEvent</td><td>the name of the application event being processed</td></tr>
+				<tr><td>_connectors</td><td>a reference to the HandlerExecutionChain's Connectors for this request</td></tr>
+				<tr><td>_timestamp</td><td>time of the request</td></tr>
+				<tr><td>_identity</td><td>an id to track this request, for any internal metrics you might create</td></tr>
+				<tr><td>_exception</td><td>a placeholder for the latest exception, for reference</td></tr>
+				<tr><td>_request</td><td>a placeholder for the initial request arguments</td></tr>
+				<tr><td>_result</td><td>a placeholder for an optional result object</td></tr>
+				<tr><td>_output</td><td>a placeholder for the output stream</td></tr>
+				<tr><td>_isPrehandled</td><td>a flag indicating that preHandle has completed</td></tr>
+				<tr><td>_isPosthandled</td><td>a flag indicating that postHandle has completed</td></tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<p>
+At minimum, developers should expect to also see the PublicCommandName as a key in the Responses, as well as the URL, Form, CGI, and HttpHeader variables configured.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="commandbubbling" />4.2.2. Command Bubbling</h3>
+</div>
+</div>
+</div>
+<p>
+Occasionally it may be helpful to break processing up into smaller, more atomic operations, especially to assist in code reuse.
+The <code class="literal">CommandContext</code> accomodates this notion by allowing <code class="literal">CommandHandlers</code>
+to create new <code class="literal">Commands</code> with it's aptly named newCommand() function.
+</p>
+
+<p>
+<code class="literal">CommandHandlers</code> can ask the <code class="literal">CommandContext</code> to immediately process a <code class="literal">Command</code>
+by using the do() function. When called in this way, control of processing is given to the <code class="literal">GliintController</code>'s commandDispatcher delegate,
+which provides the <code class="literal">CommandContext</code> (in its current state) by reference for <code class="literal">HandlerExecutionChain</code> matching and
+<code class="literal">CommandHandler</code> execution. When done, control is returned to the current <code class="literal">CommandHandler</code>, although presumably
+the state of the <code class="literal">CommandContext</code>'s responses will have changed.
+</p>
+
+<p>
+<code class="literal">CommandHandlers</code> can also have the <code class="literal">CommandContext</code> place one or more <code class="literal">Commands</code>
+in a queue (actually a double-ended queue or Deque) for later execution using it's enqueue() method.
+Once a <code class="literal">CommandHandler</code> completes its operation, control is returned to the <code class="literal">GliintController</code>,
+and <code class="literal">Commands</code> are processed from the Deque in first-in, first-out order until none are left or the maximum number of commands has been exceeded.
+The <code class="literal">CommandContext</code> also provides a dequeue() method, which returns the first <code class="literal">Command</code> from the top of the Deque.
+</p>
+
+<p>
+In the event of an exception or for other reasons, the developer might want all <code class="literal">Commands</code> removed from the Deque, so the
+<code class="literal">CommandContext</code> provides the clear() function. To see the next <code class="literal">Command</code>
+that will be processed, there's the peek() function.
+</p>
+
+<p>
+Finally, there may be times when there may be <code class="literal">Commands</code> in the Deque but the developer wants to precede those operations. For those times,
+the enstack() method allows a <code class="literal">Command</code> to be placed at the top of the Deque.
+</p>
+</div>
+
+<div class="section" lang="en">
+<div class="titlepage">
+<div>
+<div>
+<h3 class="title"><a id="hierarchicalcommandcontexts" />4.2.3. Hierarchical CommandContexts</h3>
+</div>
+</div>
+</div>
+<p>
+Under rare circumstances the developer may find that it's most convenient to encapsulate an entire process within a child <code class="literal">CommandContext</code>.
+In those situations they may have their <code class="literal">CommandHandler</code> create a new <code class="literal">CommandContext</code> with
+the current <code class="literal">CommandContext</code> initialized its parent.
+</p>
+</div>
+<!--  end chapter 4 -->
+</div>
+
+<!-- end of book -->
+</div>
+</body>
+</html>

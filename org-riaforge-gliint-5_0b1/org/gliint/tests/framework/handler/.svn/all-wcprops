@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler
+END
+BaseHandlerInterceptorTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/BaseHandlerInterceptorTest.cfc
+END
+BaseCommandHandlerTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/BaseCommandHandlerTest.cfc
+END
+ResponseInterceptorTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/ResponseInterceptorTest.cfc
+END
+CommandHandlingExecutionChainTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/CommandHandlingExecutionChainTest.cfc
+END
+NopHandlerTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/NopHandlerTest.cfc
+END

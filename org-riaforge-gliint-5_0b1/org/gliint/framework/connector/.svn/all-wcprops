@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/connector
+END
+HTTPConnector.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/connector/HTTPConnector.cfc
+END
+BaseConnector.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/connector/BaseConnector.cfc
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework
+END
+HandlerExecutionChainTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/HandlerExecutionChainTest.cfc
+END
+HandlerAdapterTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/HandlerAdapterTest.cfc
+END
+DispatcherTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/DispatcherTest.cfc
+END
+GliintControllerTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/GliintControllerTest.cfc
+END

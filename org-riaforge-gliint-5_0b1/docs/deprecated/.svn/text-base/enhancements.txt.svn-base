@@ -1,0 +1,22 @@
+Non prioritized list of enhancements and ideas
+
+New ContextRefreshingDispatcher component with robust checking of coldspring.xml includes and a shouldRefresh()
+Remove shouldRefresh() from Dispatcher.
+
+change shouldTrace business to a logger
+
+add Routes
+	
+revise HTMLTraceRenderer: remove dependency on application name, consider a seperate trace log
+
+check out:
+getPageContext().getCFOutput()
+#getPageContext().getRequest().getContextPath()##cgi.script_name#
+
+use the ValueParser for RuleInterceptor Rule Condition keys and values
+add a Regex operator for RuleInterceptor Rule Conditions
+use the ValueParser for RuleInterceptor Response values
+
+should GliintController be ApplicationContextAware?
+add Lexicon section to reference guide configuration details under commandHandlers
+add Tutorials section on Notify style and Multicast style Listeners

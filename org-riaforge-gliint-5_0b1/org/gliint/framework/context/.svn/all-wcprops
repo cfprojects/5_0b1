@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/context
+END
+AbstractWebApplicationContext.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/context/AbstractWebApplicationContext.cfc
+END
+ContextLoader.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/context/ContextLoader.cfc
+END
+DefaultWebApplicationContext.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/context/DefaultWebApplicationContext.cfc
+END
+BaseApplicationListener.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/context/BaseApplicationListener.cfc
+END

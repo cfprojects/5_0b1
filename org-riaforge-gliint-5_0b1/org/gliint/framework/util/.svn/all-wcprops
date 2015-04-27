@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util
+END
+SizedQueue.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/SizedQueue.cfc
+END
+ValueParser.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/ValueParser.cfc
+END
+Deque.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Deque.cfc
+END
+Queue.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Queue.cfc
+END
+SizedStack.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/SizedStack.cfc
+END
+BaseTraceRenderer.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/BaseTraceRenderer.cfc
+END
+Refresher.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Refresher.cfc
+END
+Stack.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Stack.cfc
+END
+HTMLTraceRenderer.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/HTMLTraceRenderer.cfc
+END
+Beaner.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Beaner.cfc
+END
+Result.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/Result.cfc
+END
+MultiPathBeanDefinitionScanner.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/MultiPathBeanDefinitionScanner.cfc
+END
+SizedDeque.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/SizedDeque.cfc
+END

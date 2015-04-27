@@ -1,0 +1,28 @@
+@import url("documentation.css");
+@import url("docnav.css");
+@import url("reports.css");
+@import url("extensions.css");
+@import url("codehighlight.css");
+
+body {
+/*	background: #4C2B0C;
+	color: #FFFFCC;
+*/
+	background: #FFFFCC;
+	font-size: 12px;
+	font-family:'Lucida Grande', Geneva, Verdana, Arial, sans-serif;
+	margin:0 auto;
+	max-width:55em;
+	padding:0em 2em;
+	color:#4c2b0c;
+	line-height:150%;
+}
+
+/* Links */
+
+/* a:link {color:#0066cc;} */
+a:link {color:#EC008C;}
+
+
+/* a:visited {color:#6699cc;} */
+a:visited {color:#F7931D}

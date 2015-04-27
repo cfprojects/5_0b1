@@ -1,0 +1,21 @@
+	=========================================================================
+	==  NOTICE file for use with the Apache License, Version 2.0,          ==
+	==  in this case for the gliint distribution.                          ==
+	=========================================================================
+
+		Gliint Framework
+		Copyright 2006-2009 Mitchell M. Rose
+
+		org/gliint/web/connector/BaseConnector.cfc includes code adapted from the
+		ColdFire Coldfusion Debugger (http://coldfire.riaforge.org/)
+		Thanks Ray, Adam, and Nathan!
+
+		/org/gliint/context/DefaultApplicationContext.cfc is a derivative work
+		of coldspring/context/DefaultApplicationContext.cfc from the open source
+		ColdSpring distribution (http://coldspringframework.org/)
+		Copyright (c) 2005, David Ross, Chris Scott, Kurt Wiersma, Sean Corfield
+		Thanks, guys!
+		
+		/org/gliint/context/DefaultApplicationContext.cfc is also a derivative work
+		based on the open source Spring Framework (http://www.springframework.org/)
+		Copyright 2006, www.springframework.org		

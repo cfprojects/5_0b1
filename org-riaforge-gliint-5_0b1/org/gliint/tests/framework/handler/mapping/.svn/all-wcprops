@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/mapping
+END
+GliintCommandHandlerMappingTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/mapping/GliintCommandHandlerMappingTest.cfc
+END
+BaseHandlerMappingTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/mapping/BaseHandlerMappingTest.cfc
+END
+SimpleHandlerMappingTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/handler/mapping/SimpleHandlerMappingTest.cfc
+END

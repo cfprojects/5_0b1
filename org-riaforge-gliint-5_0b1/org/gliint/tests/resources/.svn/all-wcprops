@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources
+END
+defaultWebApplicationContextTest2.coldspring.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/defaultWebApplicationContextTest2.coldspring.cfg.xml
+END
+TestConfigGenerator.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/TestConfigGenerator.cfc
+END
+lexicon3.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/lexicon3.xml
+END
+coldspring.gliint.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/coldspring.gliint.cfg.xml
+END
+defaultWebApplicationContextTest.coldspring.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/defaultWebApplicationContextTest.coldspring.cfg.xml
+END
+writer.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/resources/writer.cfm
+END

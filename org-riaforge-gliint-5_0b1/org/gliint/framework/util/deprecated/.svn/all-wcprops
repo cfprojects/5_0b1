@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated
+END
+Object.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated/Object.cfc
+END
+Logger.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated/Logger.cfc
+END
+ExceptionHandler.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated/ExceptionHandler.cfc
+END
+GliintXMLParser.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated/GliintXMLParser.cfc
+END
+BinaryHeap.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/util/deprecated/BinaryHeap.cfc
+END

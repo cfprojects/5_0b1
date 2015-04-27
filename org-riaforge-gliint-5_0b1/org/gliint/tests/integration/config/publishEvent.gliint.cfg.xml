@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<bean id="simpleApplicationEventMulticaster" class="org.gliint.framework.context.event.SimpleApplicationEventMulticaster" singleton="true">
+		<property name="collectionClass">
+			<list>
+				<ref bean="listener1" />
+				<ref bean="listener2" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="listener1" class="org.gliint.tests.integration.controller.listeners.PublishEventListener" singleton="true" />
+	<bean id="listener2" class="org.gliint.tests.integration.controller.listeners.PublishEventListener" singleton="true" />
+
+</beans>

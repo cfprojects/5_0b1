@@ -1,0 +1,2 @@
+Please note that the gliint5-0.xsd file included in this directory is not used, as it's been superseded by a pure ColdSpring approach.
+For documentation, please see the /docs directory included in the distribution.

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework
+END
+HandlerExecutionChain.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/HandlerExecutionChain.cfc
+END
+HandlerAdapter.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/HandlerAdapter.cfc
+END
+Dispatcher.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/Dispatcher.cfc
+END
+GliintController.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/framework/GliintController.cfc
+END

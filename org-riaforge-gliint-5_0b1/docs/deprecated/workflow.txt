@@ -1,0 +1,32 @@
+This is the typical workflow for a single request.
+
+Application.cfc receives the request and determines which of it's methods to call (e.g. onApplicationStart()).
+Application.cfc typically indirectly extends the Gliint Dispatcher (org.gliint.framework.web.dispatcher), thus,
+any application method can call the doDispatch() method.
+The doDispatch() method follows class org.springframework.web.servlet.DispatcherServlet, more or less.
+It gets a HandlerMapping, which returns a HandlerExecutionChain for the request or throws an exception
+if one can't be found.
+Then it runs the preHandle() method of each GliintHandlerInterceptor of the HandlerExecutionChain.
+If any GliintHandlerInterceptor.preHandle() returns false, it runs the triggerAfterCompletion() method on that
+Interceptor and returns.
+Otherwise (normally), it then runs the handle() method on the HandlerExecutionChains' Handler, which provides the 
+mainline processing.
+Finally, it runs the postHandle() method of each GliintHandlerInterceptor.
+
+Here is the current skeleton application workflow, with the actual components configured in the coldspring xml, 
+for doDispatch('onRequestStart'):
+
+Application.doDispatch('onRequestStart') -> SimpleHandlerMapping.getHandler()-> HandlerExecutionChain 
+	HandlerExecutionChain -> HTTPConnector.preHandle()
+	HandlerExecutionChain -> GliintController.handleRequest('onRequestStart')
+		GliintController.handleRequest() -> 
+			create commandContext and initial command from request
+			For each command
+				Dispatch.execute -> getHandler( command ) -> GliintCommandHandlerMapping -> HandlerExecutionChain
+					HandlerExecutionChain -> Multicast()
+																-> OR Notify()
+																-> OR Null()
+																-> OR #command# (by name)
+			LOOP until no more commands
+
+	HandlerExecutionChain -> HTTPConnector.postHandle()

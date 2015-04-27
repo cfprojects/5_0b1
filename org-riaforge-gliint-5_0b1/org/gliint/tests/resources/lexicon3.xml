@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+
+	<import resource="coldspring.gliint.cfg.xml" />
+	
+	<!-- in this example, the commandHandler is wrapped by the handlerExecutionChain, which is classic Spring framework style -->
+	<bean id="mockCommandHandler" class="org.gliint.framework.handler.HandlerExecutionChain" singleton="false">
+		<constructor-arg name="handler">
+			<bean class="org.gliint.framework.handler.BaseCommandHandler" singleton="false">
+				<property name="comment"><value>some comment</value></property>
+				<property name="access"><value>public</value></property>
+				<property name="shouldTrace"><value>false</value></property>
+			</bean>
+		</constructor-arg>
+		<constructor-arg name="interceptors">
+			<list></list>
+		</constructor-arg>
+	</bean>
+
+	<!--  in this example, the commandHandler is functioning as a handlerExecutionChain and uses a configured interceptor -->
+	<bean id="mockCommandHandler2" class="org.gliint.framework.handler.BaseCommandHandler" singleton="false">
+		<constructor-arg name="access"><value>public</value></constructor-arg>
+		<constructor-arg name="comment"><value>some comment</value></constructor-arg>
+		<constructor-arg name="name"><value>foo:bar</value></constructor-arg>
+
+		<constructor-arg name="method">
+			<map>
+				<entry key="name"><value>listenDoYouWantToKnowASecret</value></entry>
+				<entry key="args">
+					<map>
+						<entry key="firstArgument"><value>Paul</value></entry>
+						<entry key="secondArgument"><value>McCartney</value></entry>
+					</map>
+				</entry>
+			</map>
+		</constructor-arg>
+
+		<constructory-arg name="messages">
+			<list>
+				<value>eightDaysAWeek</value>
+				<value>yellowSubmarine</value>
+			</list>
+		</constructory-arg>
+
+		<constructor-arg name="interceptors">
+			<list>
+				<bean class="org.gliint.framework.handler.ResponseInterceptor" singleton="false">
+					<property name="beaner"><ref bean="beaner" /></property>
+					<property name="valueParser"><ref bean="valueParser"/></property>
+					<property name="shouldTrace"><value>false</value></property>
+					<property name="config">
+						<map>
+							<entry key="preHandle">
+								<list>
+									<map>
+										<entry key="name"><value>response1</value></entry>
+										<entry key="value"><value>1</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>response2</value></entry>
+										<entry key="value"><value>two</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>response3</value></entry>
+										<entry key="value"><value>g${response2}</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>response4</value></entry>
+										<entry key="value"><value>g?{request.response4}</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>response5</value></entry>
+										<entry key="value"><value>g?{nestedStruct.response5}</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>response6</value></entry>
+										<entry key="value"><value>g${notFound}</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>firstName</value></entry>
+										<entry key="value"><value>John</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>lastName</value></entry>
+										<entry key="value"><value>Lennon</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>mockBean</value></entry>
+										<entry key="class"><value>org.gliint.test.org.gliint.util.MockBean</value></entry>
+										<entry key="fields"><value>firstName,lastName</value></entry>
+										<entry key="args">
+											<map>
+												<entry key="aMethodArgumentName"><value>aMethodArgumentValue</value></entry>
+												<entry key="anotherMethodArgumentName"><value>anotherMethodArgumentValue</value></entry>
+											</map>
+										</entry>
+										<entry key="method"><value>hello</value></entry>
+									</map>
+									<map>
+										<entry key="name"><value>aMap</value></entry>
+										<entry key="value">
+											<map>
+												<entry key="aMapKey"><value>aMapValue</value></entry>
+												<entry key="anotherMapKey"><value>anotherMapValue</value></entry>
+											</map>
+										</entry>
+									</map>
+									<map>
+										<entry key="name"><value>aList</value></entry>
+										<entry key="value">
+											<list>
+												<value>aListValue</value>
+												<value>aSecondListValue</value>
+												<value>aThirdListValue</value>
+											</list>
+										</entry>
+									</map>
+									<map>
+										<entry key="name"><value>anArrayInsideAMap</value></entry>
+										<entry key="value">
+											<map>
+												<entry key="theFirstMapKey"><value>theFirstMapValue</value></entry>
+												<entry key="theSecondMapKey">
+													<list>
+														<value>theFirstArrayValue</value>
+														<value>theSecondArrayValue</value>
+														<value>theThirdArrayValue</value>
+													</list>
+												</entry>
+											</map>
+										</entry>
+									</map>
+									<map>
+										<entry key="name"><value>factoryBean</value></entry>
+										<entry key="factory-bean"><value>MockBean</value></entry>
+										<entry key="factory-method"><value>hello</value></entry>
+										<entry key="properties">
+											<map>
+												<entry key="aFactoryBeanEntryName"><value>aFactoryBeanEntryValue</value></entry>
+												<entry key="anotherFactoryBeanEntryName"><value>g${aMap}</value></entry>
+												<entry key="aThirdFactoryBeanEntryName"><value>g${mockBean}</value></entry>
+											</map>
+										</entry>
+									</map>
+								</list>
+							</entry>
+							<entry key="postHandle">
+								<list></list>
+							</entry>
+						</map>
+					</property>
+				</bean>
+			</list>
+		</constructor-arg>
+
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+
+</beans>

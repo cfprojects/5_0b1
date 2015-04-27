@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests
+END
+README.txt
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/README.txt
+END
+myTestSuite.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/myTestSuite.cfm
+END
+TestSuite.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/TestSuite.cfc
+END

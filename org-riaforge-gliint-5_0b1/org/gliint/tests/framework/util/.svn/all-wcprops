@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util
+END
+BeanerTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/BeanerTest.cfc
+END
+ResultTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/ResultTest.cfc
+END
+MultiPathBeanDefinitionScannerTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/MultiPathBeanDefinitionScannerTest.cfc
+END
+SizedDequeTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/SizedDequeTest.cfc
+END
+SizedQueueTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/SizedQueueTest.cfc
+END
+TestBean.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/TestBean.cfc
+END
+ValueParserTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/ValueParserTest.cfc
+END
+DequeTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/DequeTest.cfc
+END
+QueueTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/QueueTest.cfc
+END
+SizedStackTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/SizedStackTest.cfc
+END
+StackTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/StackTest.cfc
+END
+GliintXMLParserTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/util/GliintXMLParserTest.cfc
+END

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified">
+<!--
+	org.gliint.resources.gliint5-0.xsd
+
+	Copyright (c) 2008-2009 Mitchell M. Rose
+	All rights reserved.
+
+	Licensed under the Apache License, Version 2.0 (the "License");
+	you may not use this file except in compliance with the License.
+	You may obtain a copy of the License at
+
+		http://www.apache.org/licenses/LICENSE-2.0
+
+	Unless required by applicable law or agreed to in writing, software
+	distributed under the License is distributed on an "AS IS" BASIS,
+	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+	See the License for the specific language governing permissions and
+	limitations under the License.
+-->
+	<xsd:annotation>
+		<xsd:documentation xml:lang="en">
+			schema for the gliint framework Copyright 2005-2009 Mitchell M. Rose
+			All rights reserved.
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<!-- ELEMENTS -->
+	<xsd:element name="gliint" >
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="import" type="importType" maxOccurs="unbounded" minOccurs="0" />
+				<xsd:element name="commandHandlers" type="commandHandlers" maxOccurs="1" minOccurs="0" />
+			</xsd:sequence>
+			<xsd:attribute name="version" type="xsd:string" fixed="5.0" />
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:element name="arg" type="argType" />
+
+	<xsd:element name="bean" type="beanType" />
+	
+	<xsd:element name="command" type="commandType" />
+
+	<xsd:element name="commandHandler" type="commandHandlerType" />
+
+	<xsd:element name="condition" type="conditionType" />
+
+  <xsd:element name="entry" type="entryType" />
+  
+ 	<xsd:element name="list" type="listType" >
+	  <xsd:annotation>
+     	<xsd:documentation>
+     		Following Spring convention, a 'list' element is
+     		actually an array. For a simple list, use the 'value'
+     		element.
+     	</xsd:documentation>
+     </xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="map" type="mapType" >
+		<xsd:annotation>
+			<xsd:documentation>
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="message" type="messageType" />
+
+	<xsd:element name="property" type="argType" />
+
+	<xsd:element name="response" type="responseType" />	
+	
+	<xsd:element name="rule" type="ruleType" />
+
+	<xsd:element name="value" type="valueType" >
+		<xsd:annotation>
+			<xsd:documentation>
+				Contains a string literal or a substitution
+				expression. For substitution expressions and their
+				corresponding results, refer to the
+				org.gliint.util.ValueParser component.
+			</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<!-- COMPLEX TYPES -->
+
+	<!-- containers -->
+  <xsd:complexType name="properties">
+		<xsd:sequence>
+			<xsd:element name="property" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+  </xsd:complexType>
+
+
+   <xsd:complexType name="commands">
+		<xsd:sequence>
+			<xsd:element name="command" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+   </xsd:complexType>
+
+
+	<xsd:complexType name="commandHandlers" >
+		<xsd:sequence>
+			<xsd:element name="commandHandler" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+  </xsd:complexType>
+
+
+	<xsd:complexType name="conditions">
+		<xsd:sequence>
+			<xsd:element name="condition" maxOccurs="unbounded" minOccurs="1"/>
+		</xsd:sequence>
+  </xsd:complexType>
+
+
+	<xsd:complexType name="messages">
+		<xsd:sequence>
+			<xsd:element name="message" maxOccurs="unbounded" minOccurs="0"/>
+		</xsd:sequence>
+  </xsd:complexType>
+
+
+	<!-- regular complex types -->
+  <xsd:complexType name="argType">
+  	<xsd:sequence>
+			<xsd:element ref="value" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="literal" use="required" />
+		<xsd:attribute name="value" type="literal" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation>
+					A short-cut alternative to a nested <value>...</value> element.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+  </xsd:complexType>
+
+
+  <xsd:complexType name="beanType">
+  	<xsd:sequence>
+			<xsd:element name="property" type="argType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="method" type="methodType" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute ref="class" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation>
+					full dotted path notation to the object to be
+					created; a new instance will be created each time
+				</xsd:documentation>
+			</xsd:annotation></xsd:attribute>
+		<xsd:attribute name="fields" use="optional" default="*">
+            <xsd:annotation>
+            	<xsd:documentation>
+            		a list of fields whose names match to mutator
+            		methods (setXXX) in the bean; an asterisk may be
+            		used as a shortcut to indicate all
+            	</xsd:documentation>
+            </xsd:annotation>
+            <xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[a-zA-Z0-9*,-_]+" />
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="factory-bean" type="literal" use="optional" />
+		<xsd:attribute name="factory-method" type="literal" use="optional" />		
+  </xsd:complexType>
+
+
+	<xsd:complexType name="commandType">
+		<xsd:sequence>
+			<xsd:element name="arg" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="literal" use="required" />
+		<xsd:attribute ref="bind" use="required" />
+		<xsd:attribute name="sequence" type="xsd:positiveInteger" use="optional" default="1" />
+	</xsd:complexType>
+
+
+	<xsd:complexType name="commandHandlerType">
+		<xsd:all>
+			<xsd:element name="comment" type="xsd:string" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="properties" type="properties" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="messages" type="messages" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="preprocess" type="processType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="postprocess" type="processType" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="method" type="methodType" minOccurs="0" maxOccurs="1" >
+				<xsd:annotation>
+					<xsd:documentation>
+						method to be called on the instance returned from
+						either the class attribute or the
+						factory-bean/factory-method attributes.
+						Takes precedence over the short cut attribute alternative
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			
+		</xsd:all>
+		<xsd:attribute name="name" type="literal" use="required" />
+		<xsd:attribute ref="access" use="required" />
+		<xsd:attribute ref="class" use="optional" default="org.gliint.commandHandler.lexicon.Void" />
+		<xsd:attribute name="method" type="literal" use="optional" default="execute" >
+			<xsd:annotation>
+				<xsd:documentation>
+					A short-cut alternative to a nested <method>...</method> element.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="factory-bean" type="literal" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation>
+					id of a bean, known to ColdSpring, on which the
+					specified factory-method would be called to obtain
+					an instance
+				</xsd:documentation>
+			</xsd:annotation></xsd:attribute>
+		<xsd:attribute name="factory-method" type="literal" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation>
+					causes ColdSpring to call this method on the class
+					defined in the factory-bean attribute to return the
+					actual instance to use.
+				</xsd:documentation>
+			</xsd:annotation></xsd:attribute>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="conditionType">
+		<xsd:attribute ref="conjunction" use="optional" />
+		<xsd:attribute name="key" type="literal" use="required" />
+		<xsd:attribute ref="operator" use="required" />
+		<xsd:attribute name="value" type="literal" use="optional" />
+  </xsd:complexType>
+
+
+ 	<xsd:complexType name="entryType" >
+  	<xsd:sequence>
+			<xsd:element ref="value" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="key" type="literal" use="required" />
+		<xsd:attribute name="value" type="literal" use="optional" >
+			<xsd:annotation>
+				<xsd:documentation>
+					A short-cut alternative to a nested <value>...</value> element.
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+ 	</xsd:complexType>
+
+
+   <xsd:complexType name="importType" >
+   	<xsd:attribute name="resource" use="required" >
+   		<xsd:simpleType>
+ 				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="[a-zA-Z0-9.-_]+" />
+				</xsd:restriction>
+   		</xsd:simpleType>
+   	</xsd:attribute>
+   </xsd:complexType>
+
+
+   <xsd:complexType name="listType" >
+		<xsd:sequence>
+			<xsd:element ref="value" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>     
+   </xsd:complexType>
+
+
+	<xsd:complexType name="mapType" >
+		<xsd:sequence>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element ref="entry"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="messageType">
+		<xsd:attribute name="name" type="literal" use="required" />
+		<xsd:attribute name="hint" type="xsd:string" use="optional" />
+  </xsd:complexType>
+
+
+  <xsd:complexType name="methodType" >
+		<xsd:sequence>
+			<xsd:element name="arg" type="argType" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="literal" use="optional" default="execute" />
+  </xsd:complexType>
+
+
+	<xsd:complexType name="processType" >
+		<xsd:sequence>
+			<xsd:element name="response" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="rule" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+
+	<xsd:complexType name="responseType" >
+		<xsd:choice minOccurs="1" maxOccurs="1" >
+			<xsd:element ref="value" >
+				<xsd:annotation>
+					<xsd:documentation>
+						Will take precedence over the shortcut 'value' attribute alternative
+					</xsd:documentation>
+				</xsd:annotation></xsd:element>
+			<xsd:element ref="list" />
+			<xsd:element ref="map" />
+			<xsd:element ref="bean" />
+		</xsd:choice>
+		<xsd:attribute name="name" type="literal" use="required" />		
+		<xsd:attribute name="value" type="parsed" use="optional">
+			<xsd:annotation>
+				<xsd:documentation>
+					A short-cut alternative to a nested <value>...</value> element.					
+				</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="sequence" type="xsd:positiveInteger" use="optional" />
+	</xsd:complexType>
+
+
+	<xsd:complexType name="ruleType">
+		<xsd:sequence>
+			<xsd:element name="conditions" type="conditions" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="commands" type="commands" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="response" minOccurs="0" maxOccurs="unbounded" />			
+		</xsd:sequence>
+		<xsd:attribute name="salience" type="xsd:positiveInteger" use="required" />
+		<xsd:attribute ref="onMatch" use="optional" default="next" />
+  </xsd:complexType>
+
+
+	<xsd:complexType name="valueType" mixed="true">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded"/>
+	</xsd:complexType>
+
+
+	<!--  attributes -->
+	<xsd:attribute name="access">
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="public"></xsd:enumeration>
+				<xsd:enumeration value="private"></xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="class" >		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[a-zA-Z0-9.-_]+" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="conjunction" >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="and" />
+				<xsd:enumeration value="or" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="bind" >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="broadcast" />
+				<xsd:enumeration value="name" />
+				<xsd:enumeration value="notify" />
+				<xsd:enumeration value="verb" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="onMatch" >
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="clear" />
+				<xsd:enumeration value="clearAndEnqueue" />
+				<xsd:enumeration value="clearAndEnstack" />
+				<xsd:enumeration value="do" />
+				<xsd:enumeration value="enqueue" />
+				<xsd:enumeration value="enstack" />
+				<xsd:enumeration value="halt" />
+				<xsd:enumeration value="next" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+	<xsd:attribute name="operator" >
+		<xsd:simpleType>
+			<xsd:restriction
+				base="xsd:string">
+				<xsd:enumeration
+					value="eq" />
+				<xsd:enumeration
+					value="neq" />
+				<xsd:enumeration
+					value="gt" />
+				<xsd:enumeration
+					value="gte" />
+				<xsd:enumeration
+					value="lt" />
+				<xsd:enumeration
+					value="lte" />
+				<xsd:enumeration
+					value="exists" />
+				<xsd:enumeration
+					value="doesNotExist" />
+				<xsd:enumeration
+					value="contains" />
+				<xsd:enumeration
+					value="doesNotContain" />
+				<xsd:enumeration
+					value="typeOf" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+
+
+	<!-- simple types -->
+	<xsd:simpleType name="literal">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9:-_]+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="parsed">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[a-zA-Z0-9$?{}.-_]+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

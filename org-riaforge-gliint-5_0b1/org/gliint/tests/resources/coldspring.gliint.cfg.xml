@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- for Dispatcher use -->
+	<bean id="refresher" class="org.gliint.framework.util.Refresher" singleton="true" />
+	<bean id="simpleHandlerMapping" class="org.gliint.framework.handler.mapping.SimpleHandlerMapping" singleton="true">
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="order"><value>0</value></property>
+		<property name="defaultHandler"><ref bean="gliintController"/></property>
+	</bean>
+
+	<bean id="commandFactory" class="org.gliint.framework.command.CommandFactory" singleton="true">
+		<property name="commandClass"><value>org.gliint.framework.command.Command</value></property>
+		<property name="publicCommandName"><value>event</value></property>
+		<!-- below is the default event -->
+		<property name="publicCommandDefaultValue"><value>default</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+	</bean>
+
+	<bean id="gliintCommandHandlerMapping" class="org.gliint.framework.handler.mapping.GliintCommandHandlerMapping" singleton="true">
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="order"><value>0</value></property>
+		<property name="defaultHandler"><ref bean="default" /></property>
+		<property name="invalidAccessHandler"><ref bean="warnInvalidAccess" /></property>
+		<property name="multicastHandler"><ref bean="multicast" /></property>
+		<property name="notifyHandler"><ref bean="notify" /></property>
+	</bean>
+
+	<!-- Controller -->
+	<bean id="gliintController" class="org.gliint.framework.GliintController" singleton="true">
+		<property name="beaner"><ref bean="beaner"/></property>
+		<property name="commandBinding"><value>name</value></property>
+		<property name="commandContextClass"><value>org.gliint.framework.command.CommandContext</value></property>
+		<property name="commandDispatcher">
+			<bean id="dispatch" class="org.gliint.framework.lexicon.Dispatch" singleton="true">
+				<property name="shouldTrace"><value>true</value></property>
+				<property name="handlerMapping" ><ref bean="gliintCommandHandlerMapping" /></property>
+			</bean>
+		</property>
+		<property name="commandFactory"><ref bean="commandFactory" /></property>
+		<property name="handleApplicationEvents"><value>onRequestStart,onRequestEnd</value></property>
+		<property name="maximumCommands"><value>100</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+	</bean>
+
+	<!-- built in CommandHandlers (lexicon) -->
+	<bean id="default" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="defaultCommandHandler" class="org.gliint.framework.lexicon.Nop" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="warnInvalidAccess" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="warnInvalidAccessCommandHandler" class="org.gliint.framework.lexicon.Warn" singleton="true">
+				<property name="access"><value>private</value></property>
+				<property name="comment"><value>Invalid Access</value></property>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="multicast" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="multicastCommandHandler" class="org.gliint.framework.lexicon.Multicast" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="notify" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="notifyCommandHandler" class="org.gliint.framework.lexicon.Notify" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+
+	<bean id="beaner" class="org.gliint.framework.util.Beaner" singleton="true" autowire="byName" />
+
+	<bean id="valueParser" class="org.gliint.framework.util.ValueParser" singleton="true" />
+
+	<!-- interceptors -->
+	<bean id="htmlConnector" class="org.gliint.framework.connector.HTTPConnector" singleton="true">
+		<property name="shouldClearOutputBuffer"><value>true</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="traceRenderer">
+			<bean id="htmlTraceRenderer" class="org.gliint.framework.util.HTMLTraceRenderer" singleton="true" />
+		</property>
+		<property name="preHandleApplicationEvents"><value>onRequestStart</value></property>
+		<property name="postHandleApplicationEvents"><value>onRequestEnd</value></property>
+		<property name="postHandleShowDebugOutput"><value>false</value></property>
+		<property name="postHandleShowTrace"><value>true</value></property>
+		<property name="postHandleWriterResolution"><value>include</value></property>
+		<property name="postHandleWriterLocation"><value>/view/html/hello.cfm</value></property>
+	</bean>
+	
+	</beans>

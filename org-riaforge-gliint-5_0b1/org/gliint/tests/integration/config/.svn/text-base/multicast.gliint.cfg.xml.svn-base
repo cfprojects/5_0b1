@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- for Dispatcher use -->
+	<bean id="multiHandlerMapping" class="org.gliint.framework.handler.mapping.MultiHandlerMapping" singleton="true">
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="order"><value>1</value></property>
+		<property name="defaultHandler"><ref bean="gliintController"/></property>
+		<property name="requesters"><value>index.cfm,multicast.cfm,notify.cfm,name.cfm,publishEvent.cfm</value></property>
+	</bean>
+
+	<bean id="commandFactory" class="org.gliint.framework.command.CommandFactory" singleton="true">
+		<property name="commandClass"><value>org.gliint.framework.command.Command</value></property>
+		<property name="publicCommandName"><value>event</value></property>
+		<!-- below is the default event -->
+		<property name="publicCommandDefaultValue"><value>default</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+	</bean>
+
+	<bean id="gliintController" class="org.gliint.framework.GliintController" singleton="true">
+		<property name="beaner"><ref bean="beaner"/></property>
+		<property name="commandBinding"><value>multicast</value></property>
+		<property name="commandContextClass"><value>org.gliint.framework.command.CommandContext</value></property>
+		<property name="commandDispatcher">
+			<bean id="dispatch" class="org.gliint.framework.lexicon.Dispatch" singleton="true">
+				<property name="shouldTrace"><value>true</value></property>
+				<property name="handlerMapping" ><ref bean="gliintCommandHandlerMapping" /></property>
+			</bean>
+		</property>
+		<property name="commandFactory"><ref bean="commandFactory"/></property>
+		<property name="handleApplicationEvents"><value>onRequestStart</value></property>
+		<property name="maximumCommands"><value>20</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+	</bean>
+
+	<bean id="gliintCommandHandlerMapping" class="org.gliint.framework.handler.mapping.GliintCommandHandlerMapping" singleton="true">
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="order"><value>1</value></property>
+		<property name="defaultHandler">
+			<bean id="default" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+				<constructor-arg name="handler">
+					<bean id="defaultCommandHandler" class="org.gliint.framework.lexicon.Nop" singleton="true" />
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="invalidAccessHandler">
+			<bean id="warnInvalidAccess" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+				<constructor-arg name="handler">
+					<bean id="warnInvalidAccessCommandHandler" class="org.gliint.framework.lexicon.Warn" singleton="true">
+						<constructor-arg name="access"><value>private</value></constructor-arg>
+						<constructor-arg name="comment"><value>Invalid Access</value></constructor-arg>
+					</bean>
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="multicastHandler">
+			<bean id="multicast" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+				<constructor-arg name="handler">
+					<bean id="multicastCommandHandler" class="org.gliint.framework.lexicon.Multicast" singleton="true" >
+						<property name="listeners">
+							<list>
+								<ref bean="listener1" />
+								<ref bean="listener2" />
+								<ref bean="listener3" />
+							</list>
+						</property>
+						<property name="shouldTrace"><value>true</value></property>
+					</bean>
+				</constructor-arg>
+			</bean>
+		</property>
+		<property name="notifyHandler">
+			<bean id="notify" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+				<constructor-arg name="handler">
+					<bean id="notifyCommandHandler" class="org.gliint.framework.lexicon.Notify" singleton="true" />
+				</constructor-arg>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="listener1" class="org.gliint.tests.integration.controller.listeners.Comment" singleton="true">
+		<property name="name"><value>listener1</value></property>
+		<property name="comment"><value>listener1 is here</value></property>
+		<property name="access"><value>public</value></property>
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+	<bean id="listener2" class="org.gliint.tests.integration.controller.listeners.Comment" singleton="true">
+		<property name="name"><value>listener2</value></property>
+		<property name="comment"><value>listener2 is here</value></property>
+		<property name="access"><value>public</value></property>
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+	<bean id="listener3" class="org.gliint.tests.integration.controller.listeners.Comment" singleton="true">
+		<property name="name"><value>listener3</value></property>
+		<property name="comment"><value>listener3 is here</value></property>
+		<property name="access"><value>public</value></property>
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+	<bean id="listener4" class="org.gliint.tests.integration.controller.listeners.Comment" singleton="true">
+		<property name="name"><value>listener4</value></property>
+		<property name="comment"><value>listener4 is here</value></property>
+		<property name="access"><value>public</value></property>
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+	<bean id="listener5" class="org.gliint.tests.integration.controller.listeners.Comment" singleton="true">
+		<property name="name"><value>listener5</value></property>
+		<property name="comment"><value>listener5 is here</value></property>
+		<property name="access"><value>public</value></property>
+		<property name="shouldTrace"><value>false</value></property>
+	</bean>
+
+
+	<!-- commandHandler related -->
+	<bean id="beaner" class="org.gliint.framework.util.Beaner" singleton="true" autowire="byName" />
+	<bean id="valueParser" class="org.gliint.framework.util.ValueParser" singleton="true" />
+
+	<!-- interceptors -->
+	<bean id="htmlConnector" class="org.gliint.framework.connector.HTTPConnector" singleton="true">
+		<property name="shouldClearOutputBuffer"><value>false</value></property>
+		<property name="shouldTrace"><value>true</value></property>
+		<property name="traceRenderer">
+			<bean id="htmlTraceRenderer" class="org.gliint.framework.util.HTMLTraceRenderer" singleton="true" />
+		</property>
+		<property name="preHandleApplicationEvents"><value>onRequestStart</value></property>
+		<property name="postHandleApplicationEvents"><value>onRequestEnd</value></property>
+		<property name="postHandleShowDebugOutput"><value>true</value></property>
+		<property name="postHandleShowTrace"><value>true</value></property>
+		<property name="postHandleWriterResolution"><value>module</value></property>
+		<property name="postHandleWriterLocation"><value>/org/gliint/tests/integration/view/multicastView.cfm</value></property>
+	</bean>
+
+</beans>

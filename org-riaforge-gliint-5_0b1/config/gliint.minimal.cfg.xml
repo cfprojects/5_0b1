@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+	<!-- for Dispatcher use -->
+	<bean id="refresher" class="org.gliint.framework.util.Refresher" singleton="true" />
+	<bean id="simpleHandlerMapping" class="org.gliint.framework.handler.mapping.SimpleHandlerMapping" singleton="true">
+		<property name="defaultHandler"><ref bean="gliintController"/></property>
+	</bean>
+
+	<!-- Controller -->
+	<bean id="gliintController" class="org.gliint.framework.GliintController" singleton="true">
+		<property name="beaner"><ref bean="beaner"/></property>
+		<property name="commandDispatcher">
+			<bean id="dispatch" class="org.gliint.framework.lexicon.Dispatch" singleton="true">
+				<property name="handlerMapping" >
+					<bean id="gliintCommandHandlerMapping" class="org.gliint.framework.handler.mapping.GliintCommandHandlerMapping" singleton="true">
+						<property name="defaultHandler"><ref bean="default" /></property>
+						<property name="invalidAccessHandler"><ref bean="warnInvalidAccess" /></property>
+						<property name="multicastHandler"><ref bean="multicast" /></property>
+						<property name="notifyHandler"><ref bean="notify" /></property>
+					</bean>
+				</property>
+			</bean>
+		</property>
+		<property name="commandFactory">
+			<bean id="commandFactory" class="org.gliint.framework.command.CommandFactory" singleton="true"/>
+		</property>
+	</bean>
+
+	<bean id="beaner" class="org.gliint.framework.util.Beaner" singleton="true" autowire="byName" />
+
+	<bean id="valueParser" class="org.gliint.framework.util.ValueParser" singleton="true" />
+
+	<!-- Connectors -->
+	<bean id="htmlConnector" class="org.gliint.framework.connector.HTTPConnector" singleton="true">
+		<property name="traceRenderer">
+			<bean id="htmlTraceRenderer" class="org.gliint.framework.util.HTMLTraceRenderer" singleton="true" />
+		</property>
+		<property name="postHandleWriterResolution"><value>include</value></property>
+		<property name="postHandleWriterLocation"><value>/view/html/hello.cfm</value></property>
+	</bean>
+
+	<!-- CommandHandlers -->
+	<bean id="default" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="defaultCommandHandler" class="org.gliint.framework.lexicon.Nop" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="warnInvalidAccess" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="warnInvalidAccessCommandHandler" class="org.gliint.framework.lexicon.Warn" singleton="true">
+				<property name="access"><value>private</value></property>
+				<property name="comment"><value>Invalid Access</value></property>
+			</bean>
+		</constructor-arg>
+	</bean>
+
+	<bean id="multicast" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="multicastCommandHandler" class="org.gliint.framework.lexicon.Multicast" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+	<bean id="notify" class="org.gliint.framework.HandlerExecutionChain" singleton="true">
+		<constructor-arg name="handler">
+			<bean id="notifyCommandHandler" class="org.gliint.framework.lexicon.Notify" singleton="true" />
+		</constructor-arg>
+	</bean>
+
+</beans>

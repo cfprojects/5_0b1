@@ -1,0 +1,5 @@
+<beans>
+  <bean id="nop2" class="org.gliint.framework.lexicon.Nop" />
+  <bean id="testBean" class="org.gliint.tests.util.testBean" />
+  <bean id="simpleApplicationEventMulticaster" class="org.gliint.framework.context.event.SimpleApplicationEventMulticaster" />
+</beans>

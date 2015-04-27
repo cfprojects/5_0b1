@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/config
+END
+multicast.gliint.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/config/multicast.gliint.cfg.xml
+END
+name.gliint.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/config/name.gliint.cfg.xml
+END
+publishEvent.gliint.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/config/publishEvent.gliint.cfg.xml
+END
+notify.gliint.cfg.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/config/notify.gliint.cfg.xml
+END

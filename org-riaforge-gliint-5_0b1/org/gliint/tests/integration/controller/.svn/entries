@@ -1,0 +1,34 @@
+9
+
+dir
+318
+http://svn.riaforge.org/Gliint/framework/tags/5_0b1/org/gliint/tests/integration/controller
+http://svn.riaforge.org/Gliint
+
+
+
+2009-07-07T14:21:27.040118Z
+290
+mrose
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+60718cad-4936-1a40-a6cd-2c94c0690078
+
+commands
+dir
+
+listeners
+dir
+

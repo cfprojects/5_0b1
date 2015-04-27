@@ -1,0 +1,18 @@
+This file describes what happens when an application first starts up.
+
+The Gliint distribution contains a skeleton application for reference. It's Application.cfc component
+extends the Gliint Dispatcher component (org.gliint.framework.web.Dispatcher),
+  which extends ApplicationContextUtils (org.gliint.framework.context.util.ApplicationContextUtils),
+    which extends ColdSpring's ApplicationContextUtils (coldspring.context.util.ApplicationContextUtils).
+
+As always, Coldfusion creates an instance of Application.cfc, then runs the onApplicationStart() method.
+The skeleton application's onApplicationStart() method calls it's createWebApplicationContext() method,
+which creates a ContextLoader instance and uses that instance to create an Application Context.
+The Application Context can then be used by Application.cfc's processing methods (e.g. onRequestStart(), etc.)
+for reqular request processing. Application Context components provide additional functionality by decorating
+the Coldspring default bean factory (coldspring.beans.DefaultXmlBeanFactory).
+
+Using Gliint requires a GliintApplicationContext (org.gliint.context.GliintApplicationContext),
+which extends DefaultWebApplicationContext (org.gliint.context.DefaultWebApplicationContext)
+  which extends AbstractWebApplicationContext org.gliint.context.AbstractWebApplicationContext)
+    which extends ColdSpring's AbstractApplicationContext (coldspring.context.AbstractApplicationContext).

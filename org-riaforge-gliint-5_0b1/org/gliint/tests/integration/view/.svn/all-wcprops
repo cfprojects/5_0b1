@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/view
+END
+multicastView.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/view/multicastView.cfm
+END
+notifyView.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/view/notifyView.cfm
+END
+nameView.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/view/nameView.cfm
+END
+publishEventView.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/integration/view/publishEventView.cfm
+END

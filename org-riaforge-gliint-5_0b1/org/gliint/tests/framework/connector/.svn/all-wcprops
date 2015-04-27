@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/connector
+END
+BaseConnectorTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/connector/BaseConnectorTest.cfc
+END
+HTTPConnectorTest.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/Gliint/!svn/ver/318/framework/tags/5_0b1/org/gliint/tests/framework/connector/HTTPConnectorTest.cfc
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/Gliint/!svn/ver/318/framework/tags/5_0b1
+END
+readme.txt
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/Gliint/!svn/ver/318/framework/tags/5_0b1/readme.txt
+END
+Application.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/Gliint/!svn/ver/318/framework/tags/5_0b1/Application.cfc
+END
+ant-copy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/Gliint/!svn/ver/318/framework/tags/5_0b1/ant-copy.xml
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/Gliint/!svn/ver/318/framework/tags/5_0b1/.project
+END
+index.cfm
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/Gliint/!svn/ver/318/framework/tags/5_0b1/index.cfm
+END

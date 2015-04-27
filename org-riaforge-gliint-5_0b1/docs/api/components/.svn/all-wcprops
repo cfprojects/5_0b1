@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/Gliint/!svn/ver/318/framework/tags/5_0b1/docs/api/components
+END
+CFCParser.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/Gliint/!svn/ver/318/framework/tags/5_0b1/docs/api/components/CFCParser.cfc
+END
+Util.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/Gliint/!svn/ver/318/framework/tags/5_0b1/docs/api/components/Util.cfc
+END
+FileSystemObject.cfc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Gliint/!svn/ver/318/framework/tags/5_0b1/docs/api/components/FileSystemObject.cfc
+END
